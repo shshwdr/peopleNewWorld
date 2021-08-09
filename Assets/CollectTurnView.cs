@@ -10,5 +10,6 @@ public class CollectTurnView : TurnView
         base.updateDescriptionText();
         int collectAmount = relatedCharacters.Count;
         descriptionText.text = "Collected " + collectAmount + " food.";
+        Inventory.Instance.addItem(InventoryItem.processedFood, collectAmount);
     }
 }
