@@ -8,13 +8,24 @@ public class PlayerTurnView : TurnView
     public override void startTurnView()
     {
         base.startTurnView();
+        foreach(var character in relatedCharacters)
+        {
+            character.GetComponent<ActionSelection>().showAllSelectionUI();
+        }
+    }
+    public override bool shouldPlayTurn()
+    {
+        return true;
     }
 
-    
 
-    public override void endTurnView()
+    public override void stopTurnView()
     {
-        base.endTurnView();
+        base.stopTurnView(); 
+        foreach (var character in relatedCharacters)
+        {
+            character.GetComponent<ActionSelection>().hideAllSelectionUI();
+        }
     }
 
     // Start is called before the first frame update

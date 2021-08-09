@@ -16,6 +16,7 @@ public class CharacterManager : Singleton<CharacterManager>
     {
         //Transform position = characterPositionParent.GetChild(characterList.Count);
         GameObject go = Instantiate(characterPrefab, characterParent.transform);
+        go.GetComponent<Character>().Init(characterList.Count);
         characterList.Add(go.GetComponent< Character>());
     }
 
@@ -39,11 +40,9 @@ public class CharacterManager : Singleton<CharacterManager>
             case GameTurn.player:
 
                 return characterList;
-            case GameTurn.collect:
+            default:
                 return getCharacterWithAction((CharacterAction)((int)GameTurnManager.Instance.currentTurn-1));
         }
-
-        return characterList;
     }
     // Start is called before the first frame update
     void Start()
