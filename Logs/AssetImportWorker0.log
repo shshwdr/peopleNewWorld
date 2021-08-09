@@ -211,3 +211,971 @@ System memory in use after: 87.8 MB.
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2278.
 Total: 4.051100 ms (FindLiveObjects: 1.177700 ms CreateObjectMapping: 0.378200 ms MarkObjects: 2.317800 ms  DeleteObjects: 0.154700 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 11386.951846 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Prefabs/Rogue_01.prefab
+  artifactKey: Guid(722924ec8a0056f4a8fb443b2fb65ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Prefabs/Rogue_01.prefab using Guid(722924ec8a0056f4a8fb443b2fb65ff9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2e4c95e8b9f5f5970323f322d2cfaa3') in 0.131648 seconds
+  Import took 0.140515 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Prefabs/Rogue_06.prefab
+  artifactKey: Guid(5b210609803658e488f512fc13a6163e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Prefabs/Rogue_06.prefab using Guid(5b210609803658e488f512fc13a6163e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e26101fa2192911dfb6f88d763719e4') in 0.067968 seconds
+  Import took 0.072962 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000334 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Prefabs/Rogue_03.prefab
+  artifactKey: Guid(4a6e9a7d544412d4d92db88d8587228e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Prefabs/Rogue_03.prefab using Guid(4a6e9a7d544412d4d92db88d8587228e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6adbc131b630edf58a10e7d5bbf3600') in 0.060630 seconds
+  Import took 0.065968 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Prefabs/Rogue_04.prefab
+  artifactKey: Guid(b3d1057caadaef44ab620edfef78b14f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Prefabs/Rogue_04.prefab using Guid(b3d1057caadaef44ab620edfef78b14f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '630608bce1ffdaa18836d6eb8c35e016') in 0.057935 seconds
+  Import took 0.066188 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Prefabs/Rogue_05.prefab
+  artifactKey: Guid(30ef59945f2a7ea499bbbe10a7d48f1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Prefabs/Rogue_05.prefab using Guid(30ef59945f2a7ea499bbbe10a7d48f1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45515150b6dc0e0467c97744f0b967eb') in 0.058188 seconds
+  Import took 0.063523 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000162 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_face_01.png
+  artifactKey: Guid(518ab34707033904cb1d99dbfcc9f4bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_face_01.png using Guid(518ab34707033904cb1d99dbfcc9f4bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b92b463380d1ddd9c3813c63117ad23') in 0.066616 seconds
+  Import took 0.070265 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_r_02.png
+  artifactKey: Guid(e1cf0148d2f367e42966b7ce6ee32e73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_r_02.png using Guid(e1cf0148d2f367e42966b7ce6ee32e73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3000b6e779a1e3ccdfcb7e45ac5c5c7') in 0.017500 seconds
+  Import took 0.021451 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000184 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_01.png
+  artifactKey: Guid(5f184284ff230b44992dfd45d7153af4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_01.png using Guid(5f184284ff230b44992dfd45d7153af4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df121fe18400a4f4ab1dc0645dd260c1') in 0.019352 seconds
+  Import took 0.023019 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_r_03.png
+  artifactKey: Guid(c100ecf6707adf24083cea1e4063c659) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_r_03.png using Guid(c100ecf6707adf24083cea1e4063c659) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6b91d852a6b416a5e68c30c791ba05f') in 0.016260 seconds
+  Import took 0.019507 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000185 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_hood_03.png
+  artifactKey: Guid(ae2d3e3bacfacde4981510b116293dba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_hood_03.png using Guid(ae2d3e3bacfacde4981510b116293dba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bc0c4bbeca20471ea3e90c763a1cdee') in 0.021324 seconds
+  Import took 0.024825 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_l_04.png
+  artifactKey: Guid(7b9383d96cedcd9409cc1f3d6d355cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_l_04.png using Guid(7b9383d96cedcd9409cc1f3d6d355cf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce316d92fb51471e772691ce049b8994') in 0.015371 seconds
+  Import took 0.018652 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_r_01.png
+  artifactKey: Guid(ece48dca5e286fd48b5dc0633b08b15d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_r_01.png using Guid(ece48dca5e286fd48b5dc0633b08b15d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40f591813b49e723b5e1230ac6595410') in 0.017943 seconds
+  Import took 0.021841 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000361 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_r_06.png
+  artifactKey: Guid(ab59709aadb3a224294b3c3b5c47cc79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_r_06.png using Guid(ab59709aadb3a224294b3c3b5c47cc79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '053b910c6cf470301139c28d41a741bc') in 0.015775 seconds
+  Import took 0.019639 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_r_05.png
+  artifactKey: Guid(debc4edcc117abe4f8600caca642318f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_r_05.png using Guid(debc4edcc117abe4f8600caca642318f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29f21b6bf64dcc5e2694e07affdb8d70') in 0.015841 seconds
+  Import took 0.018898 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_r_05.png
+  artifactKey: Guid(c8246436787abd045a65c5d246ef4344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_r_05.png using Guid(c8246436787abd045a65c5d246ef4344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c3321ed76948a257af480989f584b2b') in 0.018559 seconds
+  Import took 0.021535 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_r_03.png
+  artifactKey: Guid(d4a68b40fbf8e4046a2350c31a210fb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_r_03.png using Guid(d4a68b40fbf8e4046a2350c31a210fb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '658fc8658533dba105aca565999c1672') in 0.018951 seconds
+  Import took 0.022455 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_l_06.png
+  artifactKey: Guid(add7b98e4870e9d4c8e1dd5e07e3de1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_l_06.png using Guid(add7b98e4870e9d4c8e1dd5e07e3de1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7289fd56a2a6dc19537166fc9bdc748a') in 0.016231 seconds
+  Import took 0.019786 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_r_06.png
+  artifactKey: Guid(a366da325a505654e94ff671e63cde89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_r_06.png using Guid(a366da325a505654e94ff671e63cde89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7d64cfcce0a8193d54385de36926a1e') in 0.015814 seconds
+  Import took 0.018926 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_hood_02.png
+  artifactKey: Guid(f7e7bed775fff8347b9e53c67e20875f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_hood_02.png using Guid(f7e7bed775fff8347b9e53c67e20875f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ac54c9252b159efb2dc86074613629a') in 0.020140 seconds
+  Import took 0.023856 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000211 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_l_01.png
+  artifactKey: Guid(6fa8902135d83ff49a376c05761b61d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_l_01.png using Guid(6fa8902135d83ff49a376c05761b61d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '054725110e4df99101b5e1fbecc86ce2') in 0.015817 seconds
+  Import took 0.018804 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_l_05.png
+  artifactKey: Guid(82356071de2f4a942b6c0eb7db5dbc94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_l_05.png using Guid(82356071de2f4a942b6c0eb7db5dbc94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8d10387b7a3c6ef9293d02f982ef707') in 0.016865 seconds
+  Import took 0.020617 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_hair_01.png
+  artifactKey: Guid(04f6c40e52535b941b42e11550f9cb8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_hair_01.png using Guid(04f6c40e52535b941b42e11550f9cb8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd94b059ccaaaa2e746fc20060625824e') in 0.016292 seconds
+  Import took 0.019110 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000241 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_face_03.png
+  artifactKey: Guid(41375989850254546b76c3a6813e6d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_face_03.png using Guid(41375989850254546b76c3a6813e6d19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aac6924f046673abbbfefd95247e9a2a') in 0.017776 seconds
+  Import took 0.021051 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000205 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_head_01.png
+  artifactKey: Guid(e17e5dd745f21b043bd6d387e5c5a19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_head_01.png using Guid(e17e5dd745f21b043bd6d387e5c5a19b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f90abb01e430ce72fde1e299a641b67d') in 0.015770 seconds
+  Import took 0.018767 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000169 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_face_04.png
+  artifactKey: Guid(f0dca671fefddc54c98270536b979b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_face_04.png using Guid(f0dca671fefddc54c98270536b979b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7dcf7cbe785f5d5955f7cad52cbdac0') in 0.017579 seconds
+  Import took 0.021399 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_l_02.png
+  artifactKey: Guid(3a94b1e5121a110479590d1d60ce75f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_l_02.png using Guid(3a94b1e5121a110479590d1d60ce75f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'decb52bf95c69ff8d1aa00c7d9553105') in 0.017221 seconds
+  Import took 0.020765 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_l_03.png
+  artifactKey: Guid(2932647fff9189e40a62a25143f3f534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_l_03.png using Guid(2932647fff9189e40a62a25143f3f534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0fca4c1d401a7d512eaba2e0a6f3a33b') in 0.017877 seconds
+  Import took 0.020812 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000168 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_l_01.png
+  artifactKey: Guid(48ecbe245379f214497aae538fe1d4f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_l_01.png using Guid(48ecbe245379f214497aae538fe1d4f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'baa5f4bf75c8daa31b3451913a1563ef') in 0.017047 seconds
+  Import took 0.020329 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000386 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_l_06.png
+  artifactKey: Guid(fa66f03a93fcebb418b876e0f4731600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_l_06.png using Guid(fa66f03a93fcebb418b876e0f4731600) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd86e3b63149939fdefb67dcc4144d7c') in 0.020862 seconds
+  Import took 0.024856 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_l_03.png
+  artifactKey: Guid(5e7415947ce8b1c47ade9a3d811da6cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_elbow_l_03.png using Guid(5e7415947ce8b1c47ade9a3d811da6cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d6138609513def363ce1e9136665be0') in 0.021632 seconds
+  Import took 0.024882 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_l_05.png
+  artifactKey: Guid(e97e92bbd1093e044ab575af7f9999e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_l_05.png using Guid(e97e92bbd1093e044ab575af7f9999e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29ff7a4c2cb5af730bb631f4bc0d6cc4') in 0.017734 seconds
+  Import took 0.021279 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_face_06.png
+  artifactKey: Guid(7db7af78e8f9c45418a407bdd7958560) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_face_06.png using Guid(7db7af78e8f9c45418a407bdd7958560) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '602955325ec934809d6c50e22e3dad67') in 0.019761 seconds
+  Import took 0.023568 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Prefabs/Rogue_02.prefab
+  artifactKey: Guid(7ac6bdc2e4b5e47468b8b460ca863a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Prefabs/Rogue_02.prefab using Guid(7ac6bdc2e4b5e47468b8b460ca863a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bb62fb8ed6a4627c6c4842260c983f5') in 0.061866 seconds
+  Import took 0.067480 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_r_01.png
+  artifactKey: Guid(ed569bcf23ebe674180d6ae7a5d29495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_r_01.png using Guid(ed569bcf23ebe674180d6ae7a5d29495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '553c410a8be366b0a8c56ded1954d90c') in 0.020617 seconds
+  Import took 0.024599 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_r_04.png
+  artifactKey: Guid(6ebc4c8acffeeca41934c2f2393a45be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_boot_r_04.png using Guid(6ebc4c8acffeeca41934c2f2393a45be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a897f3f7e5845c2bd8408fb26ae4c82') in 0.018364 seconds
+  Import took 0.022910 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_face_02.png
+  artifactKey: Guid(8e016bdb4d00e70429de56b91135940c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_face_02.png using Guid(8e016bdb4d00e70429de56b91135940c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5681d67e6104792d0331c6f2e10bcc6b') in 0.019304 seconds
+  Import took 0.023759 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_hood_01.png
+  artifactKey: Guid(468244f274f38f64b85773c7888444b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_hood_01.png using Guid(468244f274f38f64b85773c7888444b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c3167dd64532bc584461ea6e3ba3d0a3') in 0.020349 seconds
+  Import took 0.023186 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_hood_06.png
+  artifactKey: Guid(20eb058aea3c3a744bb5d47a1610550a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_hood_06.png using Guid(20eb058aea3c3a744bb5d47a1610550a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '55ca35a6b800572cbd4bbe86a2a1e81b') in 0.017136 seconds
+  Import took 0.020675 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_hood_04.png
+  artifactKey: Guid(dcb72940063c94f44abc2366768e713a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_hood_04.png using Guid(dcb72940063c94f44abc2366768e713a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a89eb3382d3e16951d55832942090692') in 0.026692 seconds
+  Import took 0.030307 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.902331 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_l_01.png
+  artifactKey: Guid(40e550cd3b539f14eb98d42b6769b592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_l_01.png using Guid(40e550cd3b539f14eb98d42b6769b592) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa01020f6376d9ab51ee89238436b213') in 0.018660 seconds
+  Import took 0.024088 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000474 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_l_06.png
+  artifactKey: Guid(0038d4b0669b99846b9be93321f9d7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_l_06.png using Guid(0038d4b0669b99846b9be93321f9d7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd70ca73937522b396cda8992c65a1ed9') in 0.020357 seconds
+  Import took 0.024948 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_r_01.png
+  artifactKey: Guid(7b78357522a34d64bb8775b962b0deb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_r_01.png using Guid(7b78357522a34d64bb8775b962b0deb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1269eb2c08b5271918a77ff8cf50a3c') in 0.023078 seconds
+  Import took 0.026437 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_l_03.png
+  artifactKey: Guid(5cb065829e2f3084cb4dd46e0f41fb30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_l_03.png using Guid(5cb065829e2f3084cb4dd46e0f41fb30) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'acaa7379bd0d76ce8bf5ebd22e606cb7') in 0.017964 seconds
+  Import took 0.021056 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_r_02.png
+  artifactKey: Guid(321cb2880c53eb743987a6a94741e4f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_r_02.png using Guid(321cb2880c53eb743987a6a94741e4f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c59d9a24974af2f06408594fd3b0d4b1') in 0.020566 seconds
+  Import took 0.024128 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000318 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_l_02.png
+  artifactKey: Guid(925993f8892fa474c904d0e9a8f67cee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_l_02.png using Guid(925993f8892fa474c904d0e9a8f67cee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5401f002e5f4d99de1df198e766a04ab') in 0.016463 seconds
+  Import took 0.019846 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000177 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_r_06.png
+  artifactKey: Guid(e374a8e2ee1ae6b4c938a59399b39ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_r_06.png using Guid(e374a8e2ee1ae6b4c938a59399b39ffb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d569539fcff01ac6fa3162913d09f10') in 0.018071 seconds
+  Import took 0.021686 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_r_02.png
+  artifactKey: Guid(321cb2880c53eb743987a6a94741e4f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_r_02.png using Guid(321cb2880c53eb743987a6a94741e4f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c59d9a24974af2f06408594fd3b0d4b1') in 0.011078 seconds
+  Import took 0.014576 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000172 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_r_03.png
+  artifactKey: Guid(3cf87d879b214174ea666233f56d905e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_leg_r_03.png using Guid(3cf87d879b214174ea666233f56d905e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc33c398875bc9de5fad2693575f8973') in 0.018833 seconds
+  Import took 0.022755 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.152800 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_pelvis_01.png
+  artifactKey: Guid(c376d5b80d02ffe4ba89fd03d60ec471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_pelvis_01.png using Guid(c376d5b80d02ffe4ba89fd03d60ec471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a9ceef0802ad5cf9f63fed1da49b216') in 0.018600 seconds
+  Import took 0.022466 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_pelvis_02.png
+  artifactKey: Guid(27fe921d9d4bdb24eb91cc1e96a04f02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_pelvis_02.png using Guid(27fe921d9d4bdb24eb91cc1e96a04f02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1281636f6cef947c374bd4197aad686a') in 0.017707 seconds
+  Import took 0.020987 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_l_02.png
+  artifactKey: Guid(57e9977661e6a7246b75c2de487e5bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_l_02.png using Guid(57e9977661e6a7246b75c2de487e5bb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f9187a11a3537071f41bd04c94ed80f') in 0.016250 seconds
+  Import took 0.019672 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_l_04.png
+  artifactKey: Guid(7c0d0c89b736eb54cac31e27a02a92e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_l_04.png using Guid(7c0d0c89b736eb54cac31e27a02a92e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5d6a5dd3dcfdf1d480f6a0d5842df91') in 0.017855 seconds
+  Import took 0.021547 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_r_06.png
+  artifactKey: Guid(bbec2f9af2fefd4459cd1f041e6850cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_r_06.png using Guid(bbec2f9af2fefd4459cd1f041e6850cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1e90b22fb830aff4ac969b30f7ccec7') in 0.017150 seconds
+  Import took 0.020466 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_l_03.png
+  artifactKey: Guid(44fa20638679f684891b3b8f8ae65078) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_l_03.png using Guid(44fa20638679f684891b3b8f8ae65078) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e480113d0ca52851119702310e4119a0') in 0.016859 seconds
+  Import took 0.019805 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_pelvis_04.png
+  artifactKey: Guid(4807dc8cba98f89409729f6aac2945a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_pelvis_04.png using Guid(4807dc8cba98f89409729f6aac2945a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0b436947227aa454c56a967dfee0113') in 0.015725 seconds
+  Import took 0.019078 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_l_06.png
+  artifactKey: Guid(e4c8d3fb89489fc4684fb809362e237c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_l_06.png using Guid(e4c8d3fb89489fc4684fb809362e237c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26ba0aec701edc4159e5cfbb13875b6e') in 0.018109 seconds
+  Import took 0.021126 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_r_04.png
+  artifactKey: Guid(893fc4b41b56e07479a71d811eee4b4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_r_04.png using Guid(893fc4b41b56e07479a71d811eee4b4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '37470343eec6c1d6211840ddd956e71f') in 0.016096 seconds
+  Import took 0.020008 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_l_02.png
+  artifactKey: Guid(342c30774664cc34088bfe173b77c96e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_l_02.png using Guid(342c30774664cc34088bfe173b77c96e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72e1d374fa5f4a62605538757cf43599') in 0.021738 seconds
+  Import took 0.024793 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_r_02.png
+  artifactKey: Guid(a471110b5fe3bcc4caff7ad9ff13d244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_r_02.png using Guid(a471110b5fe3bcc4caff7ad9ff13d244) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4c70055391718fda96dd83b053106d7') in 0.019908 seconds
+  Import took 0.023322 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_pelvis_06.png
+  artifactKey: Guid(b1babcb6ce4ee78478abc5076a6d1b8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_pelvis_06.png using Guid(b1babcb6ce4ee78478abc5076a6d1b8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0561df41d958dfec0815c890e43b3774') in 0.015617 seconds
+  Import took 0.019196 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_pelvis_03.png
+  artifactKey: Guid(0c6412d95175c2b40bd9a27f7d1fa096) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_pelvis_03.png using Guid(0c6412d95175c2b40bd9a27f7d1fa096) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94103e9132fadd14ac6937dff1aaa73d') in 0.019207 seconds
+  Import took 0.022877 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000354 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_l_05.png
+  artifactKey: Guid(9573c51cf9ed4c94ca1925d245b830c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_l_05.png using Guid(9573c51cf9ed4c94ca1925d245b830c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a7c34cfee1e6689956bb2e134d4d5d4') in 0.017186 seconds
+  Import took 0.020368 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000203 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_r_02.png
+  artifactKey: Guid(574bf96e23209b64eb8fa4c82d71564c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_r_02.png using Guid(574bf96e23209b64eb8fa4c82d71564c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a53d693641d2a763f7608f3af604cc76') in 0.018337 seconds
+  Import took 0.021911 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_torso_06.png
+  artifactKey: Guid(250530d3e9754ed418009e3d539275b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_torso_06.png using Guid(250530d3e9754ed418009e3d539275b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '19894d74379a16c25079fb796acb85dc') in 0.018032 seconds
+  Import took 0.021581 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000207 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_torso_01.png
+  artifactKey: Guid(215dd6c48c732d744aecd29e7fecbbfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_torso_01.png using Guid(215dd6c48c732d744aecd29e7fecbbfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a12aaafd92ee22350b6a8b6ec901464e') in 0.017321 seconds
+  Import took 0.020733 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_l_01.png
+  artifactKey: Guid(aa3c97470a4d5234ea50591a35ff9616) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_l_01.png using Guid(aa3c97470a4d5234ea50591a35ff9616) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0cd6314e2fcbd00c304953222af4e88a') in 0.016651 seconds
+  Import took 0.020175 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_torso_02.png
+  artifactKey: Guid(90458a12b047bb84ba77cb7ea81ba457) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_torso_02.png using Guid(90458a12b047bb84ba77cb7ea81ba457) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '799d280fe3703848a755ce923475ba88') in 0.017734 seconds
+  Import took 0.021216 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_l_01.png
+  artifactKey: Guid(0d8396fbd3e20f941b37c1cb7829a2e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_l_01.png using Guid(0d8396fbd3e20f941b37c1cb7829a2e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed36cf4e3a3014a08f7c96304c79f4ef') in 0.017764 seconds
+  Import took 0.021311 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000285 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_l_05.png
+  artifactKey: Guid(fde91a030e5382647a20ec036c8d578f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_l_05.png using Guid(fde91a030e5382647a20ec036c8d578f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'daa94de77a67e954d6eb11638ad15958') in 0.016018 seconds
+  Import took 0.019528 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000194 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_r_01.png
+  artifactKey: Guid(661842e23ba86e34abbf52c56c321411) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_r_01.png using Guid(661842e23ba86e34abbf52c56c321411) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f0b25d4fb169898bbc55163665f22c7') in 0.017054 seconds
+  Import took 0.020123 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_r_06.png
+  artifactKey: Guid(b2bfd98da49248e42b93a78607ac257a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_r_06.png using Guid(b2bfd98da49248e42b93a78607ac257a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1db84e53b2c2a3fe350557c677447a06') in 0.015967 seconds
+  Import took 0.019444 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000189 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_r_03.png
+  artifactKey: Guid(30716b7cc770c7b46beff26e032f9ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_r_03.png using Guid(30716b7cc770c7b46beff26e032f9ca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '331576da0081a73de876b286affcca4c') in 0.019968 seconds
+  Import took 0.023177 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000355 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_r_05.png
+  artifactKey: Guid(44abaa0566659e146ad1c3d17addf82b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_r_05.png using Guid(44abaa0566659e146ad1c3d17addf82b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f59ed73567775d04c7df10ffc06f6ad2') in 0.016199 seconds
+  Import took 0.019212 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_r_05.png
+  artifactKey: Guid(c764210032bc5df46a28cb6e1f3ad991) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_r_05.png using Guid(c764210032bc5df46a28cb6e1f3ad991) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f09e3d8f5ec9338bbc85f1c3ea5b3445') in 0.017994 seconds
+  Import took 0.021163 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_l_03.png
+  artifactKey: Guid(805906b1206aa944b99385aa2c600d2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_l_03.png using Guid(805906b1206aa944b99385aa2c600d2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8294a87c21f3d7453a2fbab9f3f8f3c') in 0.016886 seconds
+  Import took 0.019785 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_pelvis_05.png
+  artifactKey: Guid(f5e38fc0746afdb408f3af29c6c737cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_pelvis_05.png using Guid(f5e38fc0746afdb408f3af29c6c737cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c86d888eb8c3b6e54656a47825c8db1') in 0.015915 seconds
+  Import took 0.018801 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000180 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_torso_04.png
+  artifactKey: Guid(3d9056df586b6024fbc5b9fee2433eef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_torso_04.png using Guid(3d9056df586b6024fbc5b9fee2433eef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f37ea58cf433b6c7165b1a588bceed6e') in 0.016509 seconds
+  Import took 0.019647 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_torso_03.png
+  artifactKey: Guid(124013dbba7f284489ac16156c930131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_torso_03.png using Guid(124013dbba7f284489ac16156c930131) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2fa52794eb4ff9b491994884ef622305') in 0.021695 seconds
+  Import took 0.024653 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000232 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_l_06.png
+  artifactKey: Guid(767ae73862a0c7c418959a63daafaae9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_wrist_l_06.png using Guid(767ae73862a0c7c418959a63daafaae9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fe452d99610ca6cd81fd3255d4866a5') in 0.018904 seconds
+  Import took 0.022097 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_r_01.png
+  artifactKey: Guid(9af6155338c0e8f4ab8f5bb30b4c586e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_r_01.png using Guid(9af6155338c0e8f4ab8f5bb30b4c586e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f1805cc0c003b3dbad24e134279c1cb') in 0.016366 seconds
+  Import took 0.019733 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_r_03.png
+  artifactKey: Guid(9fe981f3e80b99e429e4399b985d07f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_shoulder_r_03.png using Guid(9fe981f3e80b99e429e4399b985d07f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b870423186ae5b0019be75e9b18823ff') in 0.017870 seconds
+  Import took 0.021192 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000190 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_torso_05.png
+  artifactKey: Guid(fff248787aa9dc44d819b77a6686c0af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/Rogue/Rogue_torso_05.png using Guid(fff248787aa9dc44d819b77a6686c0af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cd5ef407f6871fbd264058f74e5e5e36') in 0.017521 seconds
+  Import took 0.020720 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000802 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.920 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.32 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.5 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2297.
+Total: 2.083400 ms (FindLiveObjects: 0.270500 ms CreateObjectMapping: 0.113500 ms MarkObjects: 1.584700 ms  DeleteObjects: 0.113400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000960 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.822 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.41 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.5 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2301.
+Total: 2.378200 ms (FindLiveObjects: 0.226900 ms CreateObjectMapping: 0.057400 ms MarkObjects: 1.984100 ms  DeleteObjects: 0.108300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000810 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.32 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.905 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.5 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2305.
+Total: 2.873900 ms (FindLiveObjects: 0.353600 ms CreateObjectMapping: 0.114500 ms MarkObjects: 2.280100 ms  DeleteObjects: 0.123900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 312.801312 seconds.
+  path: Assets/Scenes/SampleScene.unity
+  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4277dab6a28e8e1d23739f05f438b540') in 0.020556 seconds
+  Import took 0.024630 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000847 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.866 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.5 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2309.
+Total: 2.900100 ms (FindLiveObjects: 0.158700 ms CreateObjectMapping: 0.051800 ms MarkObjects: 2.553000 ms  DeleteObjects: 0.124500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000772 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.35 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.861 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.37 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.5 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2313.
+Total: 2.170700 ms (FindLiveObjects: 0.162500 ms CreateObjectMapping: 0.076900 ms MarkObjects: 1.793900 ms  DeleteObjects: 0.136300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 64.886895 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/character.prefab
+  artifactKey: Guid(cbf84fd7324c4f84294ea8e4fb19c23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/character.prefab using Guid(cbf84fd7324c4f84294ea8e4fb19c23a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '051b6c1726942f1ded6a34d678b11917') in 0.109490 seconds
+  Import took 0.114434 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.628281 seconds.
+  path: Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/scene.unity
+  artifactKey: Guid(0bf53aae9bbc9af4fa49963f7aafbeb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Mighty Heroes (Rogue) 2D Fantasy Characters Pack/scene.unity using Guid(0bf53aae9bbc9af4fa49963f7aafbeb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a9b5a59774d5dc6a2f04be0053ac774') in 0.007947 seconds
+  Import took 0.011550 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001020 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.36 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.897 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.34 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1816 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.5 MB.
+System memory in use after: 88.5 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2318.
+Total: 1.972200 ms (FindLiveObjects: 0.229200 ms CreateObjectMapping: 0.068200 ms MarkObjects: 1.552600 ms  DeleteObjects: 0.114900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000804 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.30 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.862 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.32 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1817 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.6 MB.
+System memory in use after: 88.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2323.
+Total: 3.020500 ms (FindLiveObjects: 0.338000 ms CreateObjectMapping: 0.193300 ms MarkObjects: 2.310500 ms  DeleteObjects: 0.177700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000873 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.41 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.904 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.40 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1817 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.6 MB.
+System memory in use after: 88.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2327.
+Total: 3.034400 ms (FindLiveObjects: 0.355600 ms CreateObjectMapping: 0.070400 ms MarkObjects: 2.462200 ms  DeleteObjects: 0.144500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 151.758287 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42baae205c97e3337697759514652acd') in 0.010928 seconds
+  Import took 0.014596 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.911022 seconds.
+  path: Assets/prefab
+  artifactKey: Guid(571fef978967b324bad945ca551b5fce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/prefab using Guid(571fef978967b324bad945ca551b5fce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df15c5bbe8184e7567a4f85dd91aa199') in 0.009024 seconds
+  Import took 0.011955 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.514914 seconds.
+  path: Assets/prefab/character.prefab
+  artifactKey: Guid(c6b667d1dc77d1c45b88af3fe8e856e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/prefab/character.prefab using Guid(c6b667d1dc77d1c45b88af3fe8e856e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4c08a182f9fdfd87c03dac3f116f333') in 0.113059 seconds
+  Import took 0.118106 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000921 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.33 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.887 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.47 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1817 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.6 MB.
+System memory in use after: 88.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2332.
+Total: 4.810100 ms (FindLiveObjects: 0.211600 ms CreateObjectMapping: 0.059900 ms MarkObjects: 4.373300 ms  DeleteObjects: 0.163600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000901 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.37 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.854 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.47 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1817 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.6 MB.
+System memory in use after: 88.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2336.
+Total: 5.769800 ms (FindLiveObjects: 0.425300 ms CreateObjectMapping: 0.081100 ms MarkObjects: 5.024200 ms  DeleteObjects: 0.237500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.000782 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.38 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.912 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.47 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1817 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.6 MB.
+System memory in use after: 88.6 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2340.
+Total: 3.704000 ms (FindLiveObjects: 0.182000 ms CreateObjectMapping: 0.057000 ms MarkObjects: 3.218100 ms  DeleteObjects: 0.245600 ms)
+

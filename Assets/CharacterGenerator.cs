@@ -28,8 +28,13 @@ public class CharacterGenerator : Singleton<CharacterGenerator>
             string word = res.Select(i => i.ToString()).Aggregate((i, j) => i + " " + j);
             if (!isCharacterGenerated.ContainsKey(word))
             {
+                Debug.Log("character generate: "+word);
                 isCharacterGenerated[word] = true;
                 break;
+            }
+            else
+            {
+                Debug.Log("character duplication: "+word);
             }
         }
         return res;
