@@ -127,4 +127,17 @@ public class Utils : MonoBehaviour
             child.gameObject.SetActive(active);
         }
     }
+
+    static public int[] arrayAggregasion(int[] a, int[] b, int multipler= 1) {
+        if (a.Length != b.Length)
+        {
+            Debug.LogError("can't solve this!");
+            return a;
+        }
+        for(int i = 0; i < a.Length; i++)
+        {
+            a[i] += b[i]*multipler;
+        }
+        return a;
+    } 
 }

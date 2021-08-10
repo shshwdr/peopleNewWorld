@@ -1,3 +1,4 @@
+using Pool;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,9 @@ public class CollectTurnView : TurnView
         var collects = collectItems(collectAmount);
         descriptionText.text = collectString(collects);
         Inventory.Instance.addItems(collects);
+
+        EventPool.Trigger("updateCityResource");
+       // CityManager.Instance.collectItemsFromCurrentCity(collects);
     }
 
     string collectString(int[] collects)
