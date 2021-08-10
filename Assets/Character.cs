@@ -8,9 +8,11 @@ public class Character : MonoBehaviour
     public CharacterAction currentAction;
     public ActionSelection actionSelection;
 
-    public void Init(int i)
+    public string name;
+    public void Init(int i,string n)
     {
         id = i;
+        name = n;
     }
     public void setAction(int i)
     {

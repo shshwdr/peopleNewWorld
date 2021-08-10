@@ -5,6 +5,7 @@ using UnityEngine;
 public enum GameTurn { player, collect,rest}
 public class GameTurnManager : Singleton<GameTurnManager>
 {
+    public int currentTurnNum = 0;
     public GameTurn currentTurn;
 
     public List<TurnView> turnViews;
@@ -28,6 +29,7 @@ public class GameTurnManager : Singleton<GameTurnManager>
             if (nextTurn >= System.Enum.GetValues(typeof(GameTurn)).Length)
             {
                 nextTurn = 0;
+                currentTurnNum++;
             }
             currentTurn = (GameTurn)nextTurn;
 
