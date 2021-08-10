@@ -5,7 +5,7 @@
         "name": "start town",
         "px": 0,
         "py": 0,
-        "collectable": [10,10,0,0]
+        "collectable": [10,10,5,5]
       }
     ]
   }

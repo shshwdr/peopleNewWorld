@@ -20,6 +20,13 @@ public class Inventory : Singleton<Inventory>
         invenrotyAmount[InventoryItem.processedFood] = 20;
     }
 
+    public void addItems(int[] items)
+    {
+        for(int i = 0; i < items.Length; i++)
+        {
+            addItem((InventoryItem)i, items[i]);
+        }
+    }
     public void addItem(InventoryItem item, int value)
     {
         if (!invenrotyAmount.ContainsKey(item))
