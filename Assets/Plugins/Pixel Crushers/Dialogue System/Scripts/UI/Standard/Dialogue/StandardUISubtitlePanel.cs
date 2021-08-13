@@ -471,6 +471,7 @@ namespace PixelCrushers.DialogueSystem
         {
             if (subtitle == null) return;
             currentSubtitle = subtitle;
+            subtitle.speakerInfo.transform.GetComponent<DialogueCharacterHelper>().startDialogue();
             lastActorID = subtitle.speakerInfo.id;
             CheckSubtitleAnimator(subtitle);
             if (!onlyShowNPCPortraits || subtitle.speakerInfo.isNPC)
