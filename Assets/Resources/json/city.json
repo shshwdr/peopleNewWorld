@@ -8,6 +8,34 @@
         "collectable": [30,10,5,5],
         "monsters":[5,3],
         "maxMonsterNumber":[3,2]
+      },{
+        "name": "middle town",
+        "px": 3,
+        "py": 2,
+        "collectable": [30,10,5,5],
+        "monsters":[5,3],
+        "maxMonsterNumber":[3,2]
+      },{
+        "name": "next town1",
+        "px": 0,
+        "py": 1,
+        "collectable": [30,10,5,5],
+        "monsters":[5,3],
+        "maxMonsterNumber":[3,2]
+      },{
+        "name": "next town2",
+        "px": 1,
+        "py": 0,
+        "collectable": [30,10,5,5],
+        "monsters":[5,3],
+        "maxMonsterNumber":[3,2]
+      },{
+        "name": "final town",
+        "px": 6,
+        "py": 3,
+        "collectable": [30,10,5,5],
+        "monsters":[5,3],
+        "maxMonsterNumber":[3,2]
       }
     ]
   }

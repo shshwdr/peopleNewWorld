@@ -28,13 +28,14 @@ public class CityManager : Singleton<CityManager>
     int currentCityId = 0;
 
     public Transform mapTilesParent;
-    int mapTileWidth = 7;
-    int mapTileHeight = 4;
+    public int mapTileWidth = 7;
+    public int mapTileHeight = 4;
     Dictionary<Vector2, bool> isMapTileUnlocked = new Dictionary<Vector2, bool>();
     Dictionary<GameObject, Vector2> mapTileToKey = new Dictionary<GameObject, Vector2>();
     Dictionary<Vector2, GameObject> keyToMapTile = new Dictionary<Vector2, GameObject>();
 
     public Sprite tentIcon;
+    public Sprite[] tileIcons;
 
     // Start is called before the first frame update
     void Awake()
@@ -59,9 +60,9 @@ public class CityManager : Singleton<CityManager>
     public void generateMap()
     {
         int z = 0;
-        for(int i = 0;i< mapTileWidth; i++)
-        {
             for(int j = 0;j< mapTileHeight; j++)
+        {
+            for (int i = 0; i < mapTileWidth; i++)
             {
                 GameObject mapTile =  mapTilesParent.GetChild(z).gameObject;
                 Vector2 key = new Vector2(i, j);
@@ -72,6 +73,10 @@ public class CityManager : Singleton<CityManager>
                 {
                     mapTile.GetComponent<Image>().sprite = tentIcon;
                 }
+                else
+                {
+                    mapTile.GetComponent<Image>().sprite = tileIcons[(int)mapTile.GetComponent<MapTile>().type];
+                }
 
                 if (isMapTileUnlocked.ContainsKey(key))
                 {
@@ -79,7 +84,7 @@ public class CityManager : Singleton<CityManager>
                 }
                 else
                 {
-                    //mapTile.SetActive(false);
+                    mapTile.SetActive(false);
                 }
                 z++;
             }
@@ -92,11 +97,39 @@ public class CityManager : Singleton<CityManager>
 
         generateMap();
     }
-
+    public Vector3 keyPositoinOfCurrentBase()
+    {
+        return allCity[currentCityId].position;
+    }
     public Vector3 worldPositionOfCurrentBase()
     {
-        Vector2 canvasPosition = allCity[currentCityId].position;
-        return Camera.main.ScreenToWorldPoint(canvasPosition);
+        Vector2 canvasPosition = keyToMapTile[ allCity[currentCityId].position].transform.position;
+        return canvasPosition;
+    }
+
+    public MapTileType getTileMapByKey(Vector2 key)
+    {
+        if (keyToCity.ContainsKey(key))
+        {
+            return MapTileType.city;
+        }
+        return keyToMapTile[key].GetComponent<MapTile>().type;
+    }
+
+    public MapTileType unlockTileMapByKey(Vector2 key)
+    {
+        isMapTileUnlocked[key] = true;
+
+        keyToMapTile[key].SetActive(true);
+
+        
+
+        return getTileMapByKey(key);
+    }
+
+    public Vector3 worldPositionOfKey(Vector2 keyPosition)
+    {
+        return keyToMapTile[keyPosition].transform.position;
     }
 
     // Update is called once per frame
