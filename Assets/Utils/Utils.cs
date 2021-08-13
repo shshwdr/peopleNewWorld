@@ -11,6 +11,26 @@ public class Utils : MonoBehaviour
         return Random.Range(0, 2) > 0;
     }
 
+    static public int findClosestIndex<T>(Transform targetTransform, List<T> candicateTransforms) where T : HPObject
+    {
+        int res = 0;
+        float closestDistance = float.MaxValue;
+        for(int i= 0; i < candicateTransforms.Count; i++)
+        {
+            if (candicateTransforms[i].isDead)
+            {
+                continue;
+            }
+            float distance = (candicateTransforms[i].transform.position - targetTransform.position).magnitude;
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                res = i;
+            }
+        }
+        return res;
+    }
+
     static public Vector3 randomVector3(Vector3 origin, float randomness)
     {
         return new Vector3(origin.x + randomFromZero(randomness), origin.y + randomFromZero(randomness), origin.z + randomFromZero(randomness));
@@ -129,6 +149,10 @@ public class Utils : MonoBehaviour
     }
 
     static public int[] arrayAggregasion(int[] a, int[] b, int multipler= 1) {
+        if(a.Length == 0)
+        {
+            return b;
+        }
         if (a.Length != b.Length)
         {
             Debug.LogError("can't solve this!");

@@ -17,7 +17,20 @@ public class Inventory : Singleton<Inventory>
     void Awake()
     {
         invenrotyAmount = new Dictionary<InventoryItem, int>();
-        invenrotyAmount[InventoryItem.processedFood] = 20;
+        invenrotyAmount[InventoryItem.processedFood] = 10;
+    }
+
+    public string inventoryItemsToString(int[] collects)
+    {
+        string res = "";
+        for (int i = 0; i < collects.Length; i++)
+        {
+            if (collects[i] > 0)
+            {
+                res += collects[i] + " " + inventoryNameMap[(InventoryItem)i] + " ";
+            }
+        }
+        return res;
     }
 
     public void addItems(int[] items)

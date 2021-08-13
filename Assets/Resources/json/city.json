@@ -5,7 +5,9 @@
         "name": "start town",
         "px": 0,
         "py": 0,
-        "collectable": [10,10,5,5]
+        "collectable": [30,10,5,5],
+        "monsters":[5,3],
+        "maxMonsterNumber":[3,2]
       }
     ]
   }

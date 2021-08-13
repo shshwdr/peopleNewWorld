@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerTurnView : TurnView
 {
-
+    public int normalFoodConsume = 2;
+    public int rawFoodConsume = 3;
+    public int poisonFoodDamage = 10;
+    public int hungryDamage = 20;
     public override void startTurnView()
     {
         base.startTurnView();
@@ -13,16 +16,17 @@ public class PlayerTurnView : TurnView
             character.GetComponent<ActionSelection>().showAllSelectionUI();
         }
 
-        if (GameTurnManager.Instance.currentTurnNum > 0)
-        {
-
-        }
+        
 
     }
     protected override void updateDescriptionText()
     {
         base.updateDescriptionText();
-        descriptionText.text = consumeFood();
+        if (GameTurnManager.Instance.currentTurnNum > 0)
+        {
+
+            descriptionText.text = consumeFood();
+        }
     }
     string consumeFood()
     {
@@ -32,24 +36,26 @@ public class PlayerTurnView : TurnView
         for(int i =0;i< relatedCharacters.Count; i++)
         {
             //consume 1 processed food
-            if (Inventory.Instance.getItemAmount(InventoryItem.processedFood)>=2)
+            if (Inventory.Instance.getItemAmount(InventoryItem.processedFood)>= normalFoodConsume)
             {
-                Inventory.Instance.consumeItem(InventoryItem.processedFood, 2);
+                Inventory.Instance.consumeItem(InventoryItem.processedFood, normalFoodConsume);
                 continue;
-            }else if (Inventory.Instance.getItemAmount(InventoryItem.rawFood) >=3)
+            }else if (Inventory.Instance.getItemAmount(InventoryItem.rawFood) >=rawFoodConsume)
             {
-                Inventory.Instance.consumeItem(InventoryItem.rawFood, 3);
+                Inventory.Instance.consumeItem(InventoryItem.rawFood, rawFoodConsume);
                 continue;
-            }else if (Inventory.Instance.getItemAmount(InventoryItem.poisonedFood) >= 3)
+            }else if (Inventory.Instance.getItemAmount(InventoryItem.poisonedFood) >= rawFoodConsume)
             {
-                Inventory.Instance.consumeItem(InventoryItem.poisonedFood, 3);
+                Inventory.Instance.consumeItem(InventoryItem.poisonedFood, rawFoodConsume);
                 poisonedPeople.Add(relatedCharacters[i].name);
+                relatedCharacters[i].doDamage(poisonFoodDamage);
                 continue;
             }
             else
             {
 
                 hungryPeople.Add(relatedCharacters[i].name);
+                relatedCharacters[i].doDamage(hungryDamage);
             }
         }
         if (poisonedPeople.Count > 0)

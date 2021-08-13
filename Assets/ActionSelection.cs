@@ -10,6 +10,8 @@ public class ActionSelection : MonoBehaviour
     Character character;
     public Dictionary<CharacterAction, string> actionNameMap = new Dictionary<CharacterAction, string>()
     {{CharacterAction.collect, "Collect"},
+        {CharacterAction.hunt, "Hunt"},
+        {CharacterAction.scout, "Scout"},
         {CharacterAction.rest, "Rest"}
     };
     public Transform actionButtonParent;

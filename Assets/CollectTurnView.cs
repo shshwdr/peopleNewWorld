@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class CollectTurnView : TurnView
 {
-
+    public int baseCollectValue = 3;
     protected override void updateDescriptionText()
     {
         base.updateDescriptionText();
-        int collectAmount = relatedCharacters.Count;
+        int collectAmount = relatedCharacters.Count * baseCollectValue;
         var collects = collectItems(collectAmount);
         descriptionText.text = collectString(collects);
         Inventory.Instance.addItems(collects);
@@ -22,15 +22,9 @@ public class CollectTurnView : TurnView
     {
         string res = "Collected ";
         bool collectedSomething = false;
-        for(int i = 0; i < collects.Length; i++)
-        {
-            if (collects[i] > 0)
-            {
-                collectedSomething = true;
-                res += collects[i] +" "+ Inventory.Instance.inventoryNameMap[(InventoryItem) i]+" ";
-            }
-        }
-        if (!collectedSomething)
+        string inventoryString = Inventory.Instance. inventoryItemsToString(collects);
+        res += inventoryString;
+        if ((inventoryString.Length==0))
         {
             res += "Nothing...";
         }

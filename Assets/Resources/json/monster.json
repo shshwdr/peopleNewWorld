@@ -1,0 +1,20 @@
+{
+    "allMonsters":
+    [
+      {
+        "name": "bat",
+        "attack":10,
+        "maxHP":2,
+        "basicHitRate":1,
+        "basicAvoidRate":1,
+        "reward": [3,1,1,0]
+      },{
+        "name": "dragon",
+        "attack":20,
+        "maxHP":5,
+        "basicHitRate":1,
+        "basicAvoidRate":1,
+        "reward": [5,1,0,1]
+      }
+    ]
+  }

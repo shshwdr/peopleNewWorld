@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TurnView:MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class TurnView:MonoBehaviour
     public GameObject uiPanel;
     public GameObject view;
     public TMP_Text descriptionText;
+    public GameObject nextButton;
 
     protected List<Character> relatedCharacters;
     public virtual void startTurnView()
@@ -22,7 +24,7 @@ public class TurnView:MonoBehaviour
 
     public virtual void stopTurnView()
     {
-        hideAllCharacters();
+        hideRelatedCharacters();
         uiPanel.SetActive(false);
         view.SetActive(false);
     }
@@ -36,12 +38,20 @@ public class TurnView:MonoBehaviour
         relatedCharacters = CharacterManager.Instance.getCharacters();
         return relatedCharacters.Count > 0;
     }
-    void hideAllCharacters()
+    public void hideRelatedCharacters()
     {
         for (int i = 0; i < relatedCharacters.Count; i++)
         {
             var character = relatedCharacters[i];
             character.gameObject.SetActive(false);
+        }
+    }
+    public void showRelatedCharacters()
+    {
+        for (int i = 0; i < relatedCharacters.Count; i++)
+        {
+            var character = relatedCharacters[i];
+            character.gameObject.SetActive(true);
         }
     }
     protected virtual void setCharactersPosition()
