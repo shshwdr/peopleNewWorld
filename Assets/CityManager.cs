@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class CityInfo
 {
+    public int id;
     public string name;
     public int px;
     public int py;
@@ -44,10 +45,12 @@ public class CityManager : Singleton<CityManager>
         //data = JsonMapper.ToObject(text);
         var allCities = JsonMapper.ToObject<AllCityInfo>(text);
         allCity = allCities.allCity;
-
+        int i = 0;
         foreach(var cityInfo in allCity)
         {
+            cityInfo.id = i;
             keyToCity[new Vector2(cityInfo.px, cityInfo.py)] = cityInfo;
+            i++;
         }
 
     }
@@ -55,6 +58,24 @@ public class CityManager : Singleton<CityManager>
     public CityInfo currentCityInfo()
     {
         return allCity[currentCityId];
+    }
+    public void moveToCity(GameObject go)
+    {
+        var pos = mapTileToKey[go];
+        moveToCity(pos);
+    }
+    public void moveToCity(Vector2 pos)
+    {
+        currentCityId = keyToCity[pos].id;
+    }
+
+    public bool isCurrentTile(GameObject go)
+    {
+        if(go == keyToMapTile[currentCityInfo().position])
+        {
+            return true;
+        }
+        return false;
     }
 
     public void generateMap()
@@ -72,6 +93,7 @@ public class CityManager : Singleton<CityManager>
                 if (keyToCity.ContainsKey(key))
                 {
                     mapTile.GetComponent<Image>().sprite = tentIcon;
+                    mapTile.GetComponent<MapTile>().type = MapTileType.city;
                 }
                 else
                 {
@@ -84,7 +106,7 @@ public class CityManager : Singleton<CityManager>
                 }
                 else
                 {
-                    mapTile.SetActive(false);
+                   // mapTile.SetActive(false);
                 }
                 z++;
             }

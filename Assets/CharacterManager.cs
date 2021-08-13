@@ -277,7 +277,7 @@ public class CharacterManager : Singleton<CharacterManager>
 
     public GameObject characterPrefab;
     List<Character> characterList = new List<Character>();
-    GameObject characterParent;
+    public GameObject characterParent;
     Dictionary<string, bool> boyNameUsed = new Dictionary<string, bool>();
 
     void Awake()

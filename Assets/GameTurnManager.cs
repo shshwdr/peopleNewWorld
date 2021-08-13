@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameTurn { player, collect, hunt, scout, rest}
+public enum GameTurn { player, collect, hunt, scout, rest,move}
 public class GameTurnManager : Singleton<GameTurnManager>
 {
     public int currentTurnNum = 0;
@@ -18,6 +18,19 @@ public class GameTurnManager : Singleton<GameTurnManager>
 
     //}
 
+    public void move()
+    {
+
+        var currentTurnView = turnViewKeyToItem[currentTurn];
+        currentTurnView.stopTurnView();
+
+        int nextTurn = System.Enum.GetValues(typeof(GameTurn)).Length - 1;
+
+        currentTurn = (GameTurn)nextTurn;
+        var nextTurnView = turnViewKeyToItem[currentTurn];
+        nextTurnView.startTurnView();
+        currentTurnNum++;
+    }
     public void nextTurn()
     {
         var currentTurnView = turnViewKeyToItem[currentTurn];
@@ -26,7 +39,7 @@ public class GameTurnManager : Singleton<GameTurnManager>
         {
 
             int nextTurn = (int)currentTurn + 1;
-            if (nextTurn >= System.Enum.GetValues(typeof(GameTurn)).Length)
+            if (nextTurn >= System.Enum.GetValues(typeof(GameTurn)).Length-1)
             {
                 nextTurn = 0;
                 currentTurnNum++;

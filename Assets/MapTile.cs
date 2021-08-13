@@ -10,7 +10,23 @@ public class MapTile : MonoBehaviour
     {
         
     }
-
+    private void OnMouseDown()
+    {
+        if (CityManager.Instance.isCurrentTile(gameObject))
+        {
+            Debug.Log("cant move to same city");
+            return;
+        }
+        if(type == MapTileType.city)
+        {
+            CityManager.Instance.moveToCity(gameObject);
+            GameTurnManager.Instance.move();
+        }
+        else
+        {
+            Debug.Log("only move to city");
+        }
+    }
     // Update is called once per frame
     void Update()
     {
