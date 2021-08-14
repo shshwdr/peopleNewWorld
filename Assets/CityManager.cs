@@ -32,7 +32,7 @@ public class CityManager : Singleton<CityManager>
     public int mapTileWidth = 7;
     public int mapTileHeight = 4;
     Dictionary<Vector2, bool> isMapTileUnlocked = new Dictionary<Vector2, bool>();
-    Dictionary<GameObject, Vector2> mapTileToKey = new Dictionary<GameObject, Vector2>();
+    public Dictionary<GameObject, Vector2> mapTileToKey = new Dictionary<GameObject, Vector2>();
     Dictionary<Vector2, GameObject> keyToMapTile = new Dictionary<Vector2, GameObject>();
 
     public Sprite tentIcon;
@@ -106,7 +106,7 @@ public class CityManager : Singleton<CityManager>
                 }
                 else
                 {
-                   // mapTile.SetActive(false);
+                    mapTile.SetActive(false);
                 }
                 z++;
             }

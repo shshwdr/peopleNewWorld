@@ -22,7 +22,10 @@ public class HuntTurnView : TurnView
 
     public void onClickCancelButton()
     {
-        gameOver(3);
+        Popup.Instance.Init("Do you want to cancel the hunt?", () =>
+        {
+            gameOver(3);
+        });
         //Debug.Log("cancel");
         //stopTurnView();
     }
@@ -167,7 +170,11 @@ public class HuntTurnView : TurnView
     public override void stopTurnView()
     {
         base.stopTurnView();
-        selectedGroup.Clear();
+        if (selectedGroup)
+        {
+
+            selectedGroup.Clear();
+        }
         foreach (var g in monsterGroups)
         {
             g.gameObject.SetActive(false);
@@ -231,7 +238,7 @@ public class HuntTurnView : TurnView
             }
         }
 
-        cancelButton.SetActive(false);
+        cancelButton.SetActive(true);
         attackButton.SetActive(true);
         selectedGroup = group;
     }

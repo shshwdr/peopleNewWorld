@@ -35,6 +35,7 @@ public class MonsterGroup : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (ControlManager.Instance.shouldBlockMouse()) return;
         if (isSelected)
         {
             return;

@@ -276,7 +276,7 @@ public class CharacterManager : Singleton<CharacterManager>
 "Tobias"};
 
     public GameObject characterPrefab;
-    List<Character> characterList = new List<Character>();
+    public List<Character> characterList = new List<Character>();
     public GameObject characterParent;
     Dictionary<string, bool> boyNameUsed = new Dictionary<string, bool>();
 
@@ -317,13 +317,27 @@ public class CharacterManager : Singleton<CharacterManager>
         return res;
     }
 
+    List<Character> getCharacterWithoutScouting()
+    {
+        List<Character> res = new List<Character>();
+        foreach (Character go in characterList)
+        {
+            if (!go.isScouting)
+            {
+                res.Add(go);
+            }
+        }
+        return res;
+    }
+
+    
     public List<Character> getCharacters()
     {
         switch (GameTurnManager.Instance.currentTurn)
         {
             case GameTurn.player:
 
-                return characterList;
+                return getCharacterWithoutScouting();
             default:
                 return getCharacterWithAction((CharacterAction)((int)GameTurnManager.Instance.currentTurn-1));
         }

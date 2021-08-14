@@ -33,7 +33,7 @@ public class PlayerTurnView : TurnView
         string res = "";
         List<string> poisonedPeople = new List<string>();
         List<string> hungryPeople = new List<string>();
-        for(int i =0;i< relatedCharacters.Count; i++)
+        for(int i =0;i< CharacterManager.Instance.characterList.Count; i++)
         {
             //consume 1 processed food
             if (Inventory.Instance.getItemAmount(InventoryItem.processedFood)>= normalFoodConsume)

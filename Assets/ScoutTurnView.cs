@@ -2,18 +2,47 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using PixelCrushers.DialogueSystem;
+
 public enum MapTileType { dessert,swamp,city}
 public class ScoutTurnView : TurnView
 {
+
     //MonsterGroup[] monsterGroups;
     public GameObject map;
     public GameObject cancelButton;
     public Transform directionsParent;
     bool hasStartedAScout;
-    Vector2 currentScoutKeyPosition = Vector2.negativeInfinity;
+
+    public Character scoutCharacter;
+
+    public MapController mapController;
+
+    public Vector2 currentScoutKeyPosition = Vector2.negativeInfinity;
     //MonsterGroup selectedGroup;
 
     public Transform backgrounds;
+
+    public void setAction(Character chara, int i)
+    {
+        if (chara == scoutCharacter && i != (int)CharacterAction.scout)
+        {
+            scoutCharacter = null;
+        }
+        if(!scoutCharacter && i == (int)CharacterAction.scout)
+        {
+            scoutCharacter = chara;
+        }
+    }
+    public bool canCharacterScout(Character chara)
+    {
+        if (scoutCharacter)
+        {
+            DialogueManager.ShowAlert("Only one person can scout at a time.");
+            return false;
+        }
+        return true;
+    }
 
     public override void startTurnView()
     {
@@ -28,21 +57,45 @@ public class ScoutTurnView : TurnView
         }
         base.startTurnView();
         //hideRelatedCharacters();
-        showScoutMap();
-        map.SetActive(true);
-        if (!hasStartedAScout)
-        {
-            cancelButton.SetActive(true);
-        }
+        mapController.openMap();
+
+        nextButton.SetActive(false);
+        cancelButton.SetActive(true);
+        descriptionText.text = "Select a direction to move or cancel to return base.";
+        //map.SetActive(true);
+        //if (!hasStartedAScout)
+        //{
+        //    cancelButton.SetActive(true);
+        //}
         showDirections();
     }
 
     public void onClickCancelButton()
     {
-        hasStartedAScout = false;
-        gameOver(10);
+        //show pop up
+        Popup.Instance.Init("Do you want to cancel the scout and return to the base?", () =>
+        {
+            gameOver(10);
+
+            mapController.openMap();
+            cancelCurrentScout();
+        });
         //Debug.Log("cancel");
         //stopTurnView();
+    }
+    void cancelCurrentScout()
+    {
+        hasStartedAScout = false;
+        scoutCharacter.isScouting = false;
+       // scoutCharacter = null;
+    }
+    public void moveToCity(GameObject cityOb)
+    {
+        Vector2 cityPosition = CityManager.Instance.mapTileToKey[cityOb];
+        if(hasStartedAScout && cityPosition == currentScoutKeyPosition)
+        {
+            cancelCurrentScout();
+        }
     }
 
     public void showDirections()
@@ -105,6 +158,7 @@ public class ScoutTurnView : TurnView
         cancelButton.SetActive(false);
         hasStartedAScout = true;
         directionsParent.gameObject.SetActive(false);
+        scoutCharacter.isScouting = true;
 
         StartCoroutine(delayMove(dir));
     }
@@ -119,7 +173,9 @@ public class ScoutTurnView : TurnView
         yield return new WaitForSeconds(1);
         MapTileType type = CityManager.Instance.unlockTileMapByKey(nextKeyPosition);
         currentScoutKeyPosition = nextKeyPosition;
-
+        hideRelatedCharacters();
+        showRelatedCharacters();
+        mapController.openMap();
         map.SetActive(false);
         gameOver((int)type);
     }
@@ -156,22 +212,22 @@ public class ScoutTurnView : TurnView
 
     }
 
-    protected override void setCharactersPosition()
-    {
-        if (relatedCharacters == null)
-        {
-            relatedCharacters = CharacterManager.Instance.getCharacters();
-        }
-        for (int i = 0; i < relatedCharacters.Count; i++)
-        {
-            var character = relatedCharacters[i];
-            var position = CityManager.Instance.worldPositionOfKey(currentScoutKeyPosition);
-            character.transform.position = new Vector3(position.x, position.y, character.transform.position .z);
-            character.gameObject.SetActive(true);
-            character.transform.localScale = new Vector3(0.3f, 0.3f, 1);
-            break;
-        }
-    }
+    //public override void setCharactersPosition()
+    //{
+    //    if (relatedCharacters == null)
+    //    {
+    //        relatedCharacters = CharacterManager.Instance.getCharacters();
+    //    }
+    //    for (int i = 0; i < relatedCharacters.Count; i++)
+    //    {
+    //        var character = relatedCharacters[i];
+    //        var position = CityManager.Instance.worldPositionOfKey(currentScoutKeyPosition);
+    //        character.transform.position = new Vector3(position.x, position.y, character.transform.position .z);
+    //        character.gameObject.SetActive(true);
+    //        character.transform.localScale = new Vector3(0.3f, 0.3f, 1);
+    //        break;
+    //    }
+    //}
 
     public override void stopTurnView()
     {
@@ -186,11 +242,6 @@ public class ScoutTurnView : TurnView
             backgrounds.GetChild(i).gameObject.SetActive(false);
         }
     }
-
-    void showScoutMap()
-    {
-
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -201,5 +252,63 @@ public class ScoutTurnView : TurnView
     void Update()
     {
         
+    }
+
+
+    // Check to see if we're about to be destroyed.
+    private static bool m_ShuttingDown = false;
+    private static object m_Lock = new object();
+    private static ScoutTurnView m_Instance;
+
+    /// <summary>
+    /// Access singleton instance through this propriety.
+    /// </summary>
+    public static ScoutTurnView Instance
+    {
+        get
+        {
+            //if (m_ShuttingDown)
+            //{
+            //    Debug.LogWarning("[Singleton] Instance '" + typeof(T) +
+            //        "' already destroyed. Returning null.");
+            //    return null;
+            //}
+
+            lock (m_Lock)
+            {
+                if (m_Instance == null)
+                {
+                    // Search for existing instance.
+                    m_Instance = (ScoutTurnView)FindObjectOfType(typeof(ScoutTurnView));
+
+                    // Create new instance if one doesn't already exist.
+                    if (m_Instance == null)
+                    {
+                        // Need to create a new GameObject to attach the singleton to.
+                        var singletonObject = new GameObject();
+                        m_Instance = singletonObject.AddComponent<ScoutTurnView>();
+                        singletonObject.name = typeof(ScoutTurnView).ToString() + " (Singleton)";
+
+                        // Make instance persistent.
+                        // DontDestroyOnLoad(singletonObject);
+                    }
+                }
+
+                return m_Instance;
+            }
+        }
+    }
+
+
+    private void OnApplicationQuit()
+    {
+        m_ShuttingDown = true;
+    }
+
+
+    private void OnDestroy()
+    {
+        m_ShuttingDown = true;
+        m_Instance = null;
     }
 }

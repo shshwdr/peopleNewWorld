@@ -1,3 +1,4 @@
+using PixelCrushers.DialogueSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,18 +13,27 @@ public class MapTile : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if (ControlManager.Instance.shouldBlockMouse()) return;
+        if (GameTurnManager.Instance.currentTurn == GameTurn.scout) return;
         if (CityManager.Instance.isCurrentTile(gameObject))
         {
-            Debug.Log("cant move to same city");
+
+            DialogueManager.ShowAlert("Can not move to same place.");
+            //Debug.Log("cant move to same city");
             return;
         }
         if(type == MapTileType.city)
         {
-            CityManager.Instance.moveToCity(gameObject);
-            GameTurnManager.Instance.move();
+            Popup.Instance.Init("Do you want to move to the new place?", () =>
+            {
+                CityManager.Instance.moveToCity(gameObject);
+                GameTurnManager.Instance.move();
+                ScoutTurnView.Instance.moveToCity(gameObject);
+            });
         }
         else
         {
+            DialogueManager.ShowAlert("Can only move to tent.");
             Debug.Log("only move to city");
         }
     }

@@ -40,9 +40,9 @@ public class TurnView:MonoBehaviour
     }
     public void hideRelatedCharacters()
     {
-        for (int i = 0; i < relatedCharacters.Count; i++)
+        for (int i = 0; i < CharacterManager.Instance.characterList.Count; i++)
         {
-            var character = relatedCharacters[i];
+            var character = CharacterManager.Instance.characterList[i];
             character.gameObject.SetActive(false);
         }
     }
@@ -54,9 +54,9 @@ public class TurnView:MonoBehaviour
             character.gameObject.SetActive(true);
         }
     }
-    protected virtual void setCharactersPosition()
+    public virtual void setCharactersPosition()
     {
-        if (relatedCharacters == null)
+        //if (relatedCharacters == null)
         {
             relatedCharacters = CharacterManager.Instance.getCharacters();
         }

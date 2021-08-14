@@ -9,7 +9,7 @@ public class Character : HPObject
     public CharacterAction currentAction;
     public ActionSelection actionSelection;
     DragCharacter dragComponent;
-
+    public bool isScouting = false;
 
     public string name;
 
@@ -30,10 +30,24 @@ public class Character : HPObject
 
         dragComponent.enabled = false;
     }
+
+    public bool canSelectAction(int i)
+    {
+
+        var tosetAction = (CharacterAction)i;
+        if(tosetAction == CharacterAction.scout)
+        {
+            return ScoutTurnView.Instance.canCharacterScout(this);
+        }
+        return true;
+    }
     public void setAction(int i)
     {
+
+
         currentAction = (CharacterAction)i;
         actionSelection.updateCurrentAction();
+        ScoutTurnView.Instance.setAction(this,i);
     }
     protected override void Awake()
     {

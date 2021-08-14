@@ -13,6 +13,7 @@ public class DragCharacter : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if (ControlManager.Instance.shouldBlockMouse()) return;
         if (enabled)
         {
 
@@ -22,6 +23,7 @@ public class DragCharacter : MonoBehaviour
     }
     private void OnMouseDrag()
     {
+        if (ControlManager.Instance.shouldBlockMouse()) return;
         if (enabled)
         {
 

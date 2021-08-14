@@ -11,6 +11,11 @@ public class GameTurnManager : Singleton<GameTurnManager>
     public List<TurnView> turnViews;
     Dictionary<GameTurn, TurnView> turnViewKeyToItem;
 
+    public TurnView currentTurnView()
+    {
+        return turnViewKeyToItem[currentTurn];
+    }
+
     //public void startPlayerTurn()
     //{
     //    currentTurn = GameTurn.player;

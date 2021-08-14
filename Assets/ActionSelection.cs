@@ -33,12 +33,16 @@ public class ActionSelection : MonoBehaviour
         EventPool.OptIn<int>("mouseDownCharacter", getMouseDown);
     }
 
-    private void OnMouseUp()
+    private void OnMouseDown()
     {
-
+        if (ControlManager.Instance.shouldBlockMouse())
+        {
+            return;
+        }
         EventPool.Trigger<int>("mouseDownCharacter", character.id);
         //Debug.Log("on mouse down " + character.name);
         actionButtonParent.gameObject.SetActive(true);
+        ControlManager.Instance.shouldBlockInput = true;
     }
 
     void getMouseDown(int i)
@@ -58,6 +62,7 @@ public class ActionSelection : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         actionButtonParent.gameObject.SetActive(false);
+
     }
     public void hideAllSelectionUI()
     {
@@ -72,8 +77,13 @@ public class ActionSelection : MonoBehaviour
 
     public void selectAction(int i)
     {
-        character.setAction(i);
-        hideSelection();
+        ControlManager.Instance.shouldBlockInput = false;
+        if (character.canSelectAction(i))
+        {
+
+            character.setAction(i);
+            hideSelection();
+        }
     }
 
     public void updateCurrentAction()
