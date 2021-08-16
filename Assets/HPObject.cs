@@ -7,6 +7,7 @@ public class HPObject : MonoBehaviour
     public int maxHP = 100;
     int hp;
     public bool isDead;
+    public bool temporaryLeave;
     HPBar hpbar;
 
     public virtual int attack { get { return 1; } }

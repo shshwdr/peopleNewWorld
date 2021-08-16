@@ -39,6 +39,41 @@ public class Character : HPObject
 
     AbilityRow[] abilitiesUI;
 
+
+
+    public override int attack
+    {
+        get
+        {
+            int res = 3;
+            //str buff
+            res += Mathf.FloorToInt((getAbility(CharacterAbility.Str)) * 0.1f);
+            //weapon
+            if (Inventory.Instance.getItemAmount(InventoryItem.weapon) > 1)
+            {
+                res += 5;
+                Inventory.Instance.consumeItem(InventoryItem.weapon, 1);
+            }
+            return res;
+        }
+    }
+
+    public float avoidRate
+    {
+        get
+        {
+            return 1.0f - (getAbility(CharacterAbility.Agi) * 0.008f);
+        }
+    }
+
+    public float hitRate
+    {
+        get
+        {
+            return 1.0f + (getAbility(CharacterAbility.Dex) * 0.01f);
+        }
+    }
+
     public void hideStatus()
     {
         foreach(var bar in statusBar)
@@ -52,6 +87,10 @@ public class Character : HPObject
         {
             bar.gameObject.SetActive(true);
         }
+    }
+    public void showStatus(CharacterStatus status)
+    {
+        statusBar[(int)status].gameObject.SetActive(true);
     }
     public void updateAbilities()
     {
@@ -94,7 +133,7 @@ public class Character : HPObject
     public void decreaseStatus(CharacterStatus ability, int val)
     {
         statusValue[(int)ability] -= val;
-        statusValue[(int)ability] = Mathf.Max(abilityValue[(int)ability], 0);
+        statusValue[(int)ability] = Mathf.Max(statusValue[(int)ability], 0);
         statusBar[(int)ability].updateCurrentValue(statusValue[(int)ability]);
         if (statusValue[(int)ability] <= 0)
         {
@@ -136,11 +175,13 @@ public class Character : HPObject
     public void startBattle()
     {
         dragComponent.enabled = true;
+        actionSelection.enabled = false;
     }
     public void stopBattle()
     {
 
         dragComponent.enabled = false;
+        actionSelection.enabled = true;
     }
 
     public bool canSelectAction(int i)

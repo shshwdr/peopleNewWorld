@@ -4,16 +4,16 @@
       {
         "name": "bat",
         "attack":10,
-        "maxHP":2,
-        "basicHitRate":1,
-        "basicAvoidRate":1,
+        "maxHP":5,
+        "basicHitRate":0.5,
+        "basicAvoidRate":0.8,
         "reward": [3,1,1,0]
       },{
         "name": "dragon",
         "attack":20,
         "maxHP":5,
         "basicHitRate":1,
-        "basicAvoidRate":1,
+        "basicAvoidRate":0.8,
         "reward": [5,1,0,1]
       }
     ]

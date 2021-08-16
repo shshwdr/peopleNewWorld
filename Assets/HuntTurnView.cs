@@ -13,13 +13,35 @@ public class HuntTurnView : TurnView
     int[] totalReward;
     public override void startTurnView()
     {
-        base.startTurnView();
+        //monster anim in
+        loadTutorials();
+        nextButton.SetActive(false);
+        uiPanel.SetActive(true);
+
+        updateDescriptionText();
+
+        view.SetActive(true);
         totalReward = new int[] { };
         hideRelatedCharacters();
         showMonsterGroups();
         cancelButton.SetActive(true);
+        for (int i = 0; i < relatedCharacters.Count; i++)
+        {
+            var character = relatedCharacters[i];
+            if (character.isDead)
+            {
+                continue;
+            }
+            character.temporaryLeave = false;
+        }
+    }
+
+
+    protected override void loadTutorials()
+    {
 
         TutorialManager.Instance.unlockAction((int)CharacterAction.rest);
+        TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialTurnIntro_Hunt);
     }
 
     public void onClickCancelButton()
@@ -50,6 +72,10 @@ public class HuntTurnView : TurnView
             {
                 continue;
             }
+            if (character.temporaryLeave)
+            {
+                continue;
+            }
             playerAllDead = false;
             break;
         }
@@ -76,36 +102,12 @@ public class HuntTurnView : TurnView
     IEnumerator playerAttack()
     {
         var monsters = selectedGroup.monsters;
-        for (int i = 0; i < relatedCharacters.Count; i++)
-        {
-            var character = relatedCharacters[i];
-            if (character.isDead)
-            {
-                continue;
-            }
-            character.transform.DOShakePosition(0.7f);
-            var monsterID = Utils.findClosestIndex(character.transform, monsters);
-            var targetMonster = monsters[monsterID];
-            targetMonster.doDamage(character.attack);
 
-            targetMonster.transform.DOPunchScale(Vector3.one, 0.9f,10,0.5f);//( DOShakePosition(0.9f);
-            if (targetMonster.isDead)
-            {
-                addReward(targetMonster);
-            }
-            int gameover = checkGameOver();
-            if (gameover > 0)
-            {
-                gameOver(gameover);
-                yield break;
-            }
-            yield return new WaitForSeconds(1);
-        }
 
-        for(int i = 0; i < monsters.Count; i++)
+        for (int i = 0; i < monsters.Count; i++)
         {
 
-            var monster = monsters[i].GetComponent<Monster>() ;
+            var monster = monsters[i].GetComponent<Monster>();
             if (monster.isDead)
             {
                 continue;
@@ -113,10 +115,88 @@ public class HuntTurnView : TurnView
             monster.transform.DOShakePosition(0.7f);
             var characterID = Utils.findClosestIndex(monster.transform, relatedCharacters);
             var targetCharacter = relatedCharacters[characterID];
-            targetCharacter.doDamage(monster.attack);
+
+            //check if monster can avoid
+            var monsterAvoid = targetCharacter.avoidRate;
+            var characterHit = monster.hitRate;
+            var avoidRate = monsterAvoid * characterHit;
+
+            float rand = Random.Range(0f, 1f);
+            if (rand < avoidRate)
+            {
+                //hit
+
+                targetCharacter.doDamage(monster.attack);
+                ControlManager.Instance.createPopupUI("-" + monster.attack, targetCharacter.transform.position);
+                targetCharacter.temporaryLeave = true;
+
+            }
+            else
+            {
+
+                ControlManager.Instance.createPopupUI("Miss", targetCharacter.transform.position);
+            }
 
             // targetCharacter.transform.DOShakePosition(0.9f,1f,5);
             targetCharacter.transform.DOPunchScale(Vector3.one, 0.9f, 10, 0.5f);
+            yield return new WaitForSeconds(1);
+
+            if (rand < avoidRate)
+            {
+
+                //character go away
+
+                targetCharacter.transform.DOMove(targetCharacter.transform.position + new Vector3(20, Random.Range(-10, 10), 0), 1);
+                yield return new WaitForSeconds(1);
+            }
+
+            int gameover = checkGameOver();
+            if (gameover > 0)
+            {
+                gameOver(gameover);
+                yield break;
+            }
+        }
+        for (int i = 0; i < relatedCharacters.Count; i++)
+        {
+            var character = relatedCharacters[i];
+            if (character.isDead)
+            {
+                continue;
+            }
+            if (character.temporaryLeave)
+            {
+                continue;
+            }
+            character.transform.DOShakePosition(0.7f);
+            var monsterID = Utils.findClosestIndex(character.transform, monsters);
+            var targetMonster = monsters[monsterID];
+
+            //check if monster can avoid
+            var monsterAvoid = targetMonster.avoidRate;
+            var characterHit = character.hitRate;
+            var avoidRate = monsterAvoid * characterHit;
+
+            float rand = Random.Range(0f, 1f);
+            if (rand < avoidRate)
+            {
+                //hit
+
+                targetMonster.doDamage(character.attack);
+                ControlManager.Instance.createPopupUI("-" + character.attack, targetMonster.transform.position);
+            }
+            else
+            {
+
+                ControlManager.Instance.createPopupUI("Miss", targetMonster.transform.position);
+            }
+
+
+            targetMonster.transform. DOPunchScale(Vector3.one, 0.9f,10,0.5f);//( DOShakePosition(0.9f);
+            if (targetMonster.isDead)
+            {
+                addReward(targetMonster);
+            }
             int gameover = checkGameOver();
             if (gameover > 0)
             {
@@ -139,17 +219,17 @@ public class HuntTurnView : TurnView
         if(res == 1)
         {
             //all character die
-            descriptionText.text = "you lose.";
+            descriptionText.text = "You lose. ";
         }
         else if (res == 2)
         {
             // all enemy die
-            descriptionText.text = "you win.";
+            descriptionText.text = "You win. ";
         }
         else if(res == 3)
         {
             //cancel
-            descriptionText.text = "Cancelled the hunt.";
+            descriptionText.text = "Cancelled the hunt. ";
         }
         string rewardString = Inventory.Instance.inventoryItemsToString(totalReward);
         if (rewardString.Length > 0)
@@ -233,16 +313,31 @@ public class HuntTurnView : TurnView
             }
             else
             {
+                g.transform.DOMove(new Vector3(0, 0, 0), 1);
+                g.transform.DOScale(new Vector3(2, 2, 2), 1);
+                //g.transform.localScale = new Vector3(2, 2, 2);
+                //g.transform.position = new Vector3(0, 0, 0);
 
-                g.transform.localScale = new Vector3(2, 2, 2);
-                g.transform.position = new Vector3(0, 0, 0);
+                setCharactersPosition();
+                StartCoroutine(moveCharacters());
                 showRelatedCharacters();
             }
         }
 
+        selectedGroup = group;
+
+
+    }
+
+    protected override void afterMoveCharacter()
+    {
+        //base.afterMoveCharacter();
         cancelButton.SetActive(true);
         attackButton.SetActive(true);
-        selectedGroup = group;
+        for (int i = 0; i < relatedCharacters.Count; i++)
+        {
+            relatedCharacters[i].showStatus(CharacterStatus.health);
+                }
     }
 
     void addReward(Monster mon)

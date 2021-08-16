@@ -53,6 +53,7 @@ public class TurnView:MonoBehaviour
             var character = CharacterManager.Instance.characterList[i];
             character.hideStatus();
             character.gameObject.SetActive(false);
+            character.GetComponent<ActionSelection>().cancelSelection();
         }
     }
     public void showRelatedCharacters()
@@ -78,7 +79,7 @@ public class TurnView:MonoBehaviour
     }
 
 
-    IEnumerator moveCharacters()
+    protected IEnumerator moveCharacters()
     {
         for (int i = 0; i < relatedCharacters.Count; i++)
         {

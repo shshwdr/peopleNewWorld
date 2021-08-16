@@ -11,7 +11,7 @@ public class HPBar : MonoBehaviour
     float currentValue;
     private void Awake()
     {
-        image = GetComponentInChildren<Image>();
+       // image = GetComponentInChildren<Image>();
     }
     public void setMaxValue(int v)
     {

@@ -32,6 +32,12 @@ public class TutorialManager : Singleton<TutorialManager>
     static public string tutorialTurnIntro_Forge2 = "Check the material remins! If there is not enough material left, you can't forge anything";
 
 
+    static public string tutorialTurnIntro_Hunt = "While hunting, you need to first select a monster group to hunt, then arrange the position of characters to attack monsters.";
+    static public string tutorialTurnIntro_Hunt2 = "The closer a character is to a monster, the more damage he will deal to the closest monster, but he will get more damage too.";
+    static public string tutorialTurnIntro_Hunt3 = "The <color=red>Strength</color> affect how much damage a character can deal to a monster, <color=red>Agility</color> affect rate to avoid be attacked, <color=red>Dexterity</color> affect hit rate.";
+    static public string tutorialTurnIntro_Hunt4 = "If you have weapons, they will be used automatically and deal more damage to monster";
+
+
     List<string> tutorialStack = new List<string>();
 
     Dictionary<string, bool> hadTutorialShown = new Dictionary<string, bool>();
@@ -42,6 +48,9 @@ public class TutorialManager : Singleton<TutorialManager>
         {tutorialTurnIntro_Collect,tutorialTurnIntro_Collect2 },
         {tutorialTurnIntro_Cook,tutorialTurnIntro_Cook2 },
         {tutorialTurnIntro_Forge,tutorialTurnIntro_Forge2 },
+        {tutorialTurnIntro_Hunt,tutorialTurnIntro_Hunt2 },
+        {tutorialTurnIntro_Hunt2,tutorialTurnIntro_Hunt3 },
+        {tutorialTurnIntro_Hunt3,tutorialTurnIntro_Hunt4 },
     };
 
     public void finishPopup(string key)

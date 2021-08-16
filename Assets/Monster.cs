@@ -13,6 +13,20 @@ public class Monster : HPObject
     }
 
     public override int attack { get { return info.attack; } }
+    public float avoidRate
+    {
+        get
+        {
+            return info.basicAvoidRate;
+        }
+    }
+    public float hitRate
+    {
+        get
+        {
+            return info.basicHitRate;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {

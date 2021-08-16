@@ -47,6 +47,10 @@ public class ActionSelection : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (!isActiveAndEnabled)
+        {
+            return;
+        }
         if (ControlManager.Instance.shouldBlockMouse())
         {
             return;
@@ -81,7 +85,15 @@ public class ActionSelection : MonoBehaviour
 
     public void hideSelection()
     {
-        StartCoroutine(delayHide());
+        if (!enabled)
+        {
+            return;
+        }
+        if (isActiveAndEnabled)
+        {
+
+            StartCoroutine(delayHide());
+        }
         //actionButtonParent.gameObject.SetActive(false);
     }
     IEnumerator delayHide()
@@ -99,6 +111,12 @@ public class ActionSelection : MonoBehaviour
         allSelectionUI.SetActive(true);
     }
 
+    public void cancelSelection()
+    {
+
+        ControlManager.Instance.shouldBlockInput = false;
+        hideAllSelectionUI();
+    }
    
 
     public void selectAction(int i)
