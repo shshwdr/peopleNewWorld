@@ -20,7 +20,7 @@ public class Inventory : Singleton<Inventory>
         invenrotyAmount = new Dictionary<InventoryItem, int>();
         invenrotyAmount[InventoryItem.processedFood] = 10;
         invenrotyAmount[InventoryItem.rawFood] = 5;
-        invenrotyAmount[InventoryItem.materials] = 5;
+        invenrotyAmount[InventoryItem.materials] = 10;
     }
 
     public string inventoryItemsToString(int[] collects)

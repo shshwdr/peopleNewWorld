@@ -28,6 +28,10 @@ public class TutorialManager : Singleton<TutorialManager>
     static public string tutorialTurnIntro_Cook2 = "Check the raw food remins! If there is no raw food left, you can't cook anything";
 
 
+    static public string tutorialTurnIntro_Forge = "You can forge weapon here, the material needed and the amount of weapon forged is affect by the <color=red>Dexterity</color>.";
+    static public string tutorialTurnIntro_Forge2 = "Check the material remins! If there is not enough material left, you can't forge anything";
+
+
     List<string> tutorialStack = new List<string>();
 
     Dictionary<string, bool> hadTutorialShown = new Dictionary<string, bool>();
@@ -36,6 +40,8 @@ public class TutorialManager : Singleton<TutorialManager>
         {tutorialActionIntro_Collect,tutorialActionIntro_Collect2 },
         {tutorialActionIntro_Rest,tutorialActionIntro_Rest2 },
         {tutorialTurnIntro_Collect,tutorialTurnIntro_Collect2 },
+        {tutorialTurnIntro_Cook,tutorialTurnIntro_Cook2 },
+        {tutorialTurnIntro_Forge,tutorialTurnIntro_Forge2 },
     };
 
     public void finishPopup(string key)

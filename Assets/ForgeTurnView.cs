@@ -4,16 +4,63 @@ using UnityEngine;
 
 public class ForgeTurnView : TurnView
 {
-    public int baseForgeValue = 1;
-    public int baseForgeCost = 4;
+    public int baseForgeValue = 8;
+    public int baseForgeOutput = 2;
+    public float maxAffectRate = 0.05f;
+    public CharacterAbility affectAbility = CharacterAbility.Dex;
     protected override void updateDescriptionText()
     {
         base.updateDescriptionText();
-        int cookAmount = relatedCharacters.Count * baseForgeValue;
+        int collectAmount = 0;
+        int consumeAmount = 0;
+        bool notEnoughRawFood = false;
+        foreach (var chara in relatedCharacters)//sort with agile?
+        {
+            int maxConsumeFood = 0;
+            maxConsumeFood += baseForgeValue;
+            maxConsumeFood -= Mathf.FloorToInt((chara.getAbility(affectAbility) + 10) * maxAffectRate);
+            int consumeFood = Mathf.Min(maxConsumeFood, Inventory.Instance.getItemAmount(InventoryItem.materials));
+            if (consumeFood < maxConsumeFood)
+            {
+                notEnoughRawFood = true;
+                continue;
+            }
+            Inventory.Instance.consumeItem(InventoryItem.materials, consumeFood);
+            int currentCollect = baseForgeOutput;
+            currentCollect += Mathf.FloorToInt(chara.getAbility(affectAbility) * maxAffectRate);
+            showItemsCollected(chara, currentCollect);
+            collectAmount += currentCollect;
+            consumeAmount += consumeFood;
+        }
+        //relatedCharacters.Count * baseCollectValue;
         //var collects = collectItems(collectAmount);
-        descriptionText.text = "forge something (WIP)";//collectString(collects);
-        //Inventory.Instance.addItems(collects);
+        descriptionText.text = "Forged " + consumeAmount.ToString() + " " + Inventory.Instance.inventoryNameMap[InventoryItem.materials] + " to " +
+            collectAmount.ToString() + " " + Inventory.Instance.inventoryNameMap[InventoryItem.weapon] + ". ";
+        if (notEnoughRawFood)
+        {
+            descriptionText.text += "You can forge more but there is no " + Inventory.Instance.inventoryNameMap[InventoryItem.materials] + " left.";
+        }
+        Inventory.Instance.addItem(InventoryItem.weapon, collectAmount);
 
+        foreach (var chara in relatedCharacters)
+        {
+            chara.increaseAbility(affectAbility, 1);
+        }
+        // CityManager.Instance.collectItemsFromCurrentCity(collects);
+    }
+
+    protected override void loadTutorials()
+    {
+
+        TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialTurnIntro_Forge);
+    }
+
+    void showItemsCollected(Character chara, int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            chara.addTempItem(2);
+        }
     }
     // Start is called before the first frame update
     void Start()
