@@ -8,16 +8,54 @@ public class PlayerTurnView : TurnView
     public int rawFoodConsume = 3;
     public int poisonFoodDamage = 10;
     public int hungryDamage = 20;
+
+    public GameObject mapButton;
     public override void startTurnView()
     {
         base.startTurnView();
         foreach(var character in relatedCharacters)
         {
+            character.updateAbilities();
             character.GetComponent<ActionSelection>().showAllSelectionUI();
+            character.showStatus();
         }
 
-        
+        if (MainGameManager.Instance.unlockedAction[MainGameManager.Instance.unlockedAction.Length - 1])
+        {
+            mapButton.SetActive(true);
+        }
+        else
+        {
 
+            mapButton.SetActive(false);
+        }
+
+        //showTutorial();
+
+    }
+
+    protected override void loadTutorials()
+    {
+        if (MainGameManager.Instance.unlockedAction[(int)CharacterAction.collect])
+        {
+            TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialActionIntro_Collect);
+        }
+        if (MainGameManager.Instance.unlockedAction[(int)CharacterAction.hunt])
+        {
+            TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialActionIntro_Hunt);
+        }
+        if (MainGameManager.Instance.unlockedAction[(int)CharacterAction.rest])
+        {
+            TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialActionIntro_Rest);
+        }
+        if (MainGameManager.Instance.unlockedAction[(int)CharacterAction.scout])
+        {
+            TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialActionIntro_Scout);
+        }
+        if (MainGameManager.Instance.unlockedAction[MainGameManager.Instance.unlockedAction.Length-1])
+        {
+            TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialActionIntro_Move);
+        }
     }
     protected override void updateDescriptionText()
     {
@@ -31,40 +69,45 @@ public class PlayerTurnView : TurnView
     string consumeFood()
     {
         string res = "";
-        List<string> poisonedPeople = new List<string>();
+        List<string> rawPeople = new List<string>();
         List<string> hungryPeople = new List<string>();
         for(int i =0;i< CharacterManager.Instance.characterList.Count; i++)
         {
             //consume 1 processed food
-            if (Inventory.Instance.getItemAmount(InventoryItem.processedFood)>= normalFoodConsume)
+            if (Inventory.Instance.getItemAmount(InventoryItem.processedFood) >= normalFoodConsume)
             {
                 Inventory.Instance.consumeItem(InventoryItem.processedFood, normalFoodConsume);
                 continue;
-            }else if (Inventory.Instance.getItemAmount(InventoryItem.rawFood) >=rawFoodConsume)
+            }
+            else if (Inventory.Instance.getItemAmount(InventoryItem.rawFood) >= rawFoodConsume)
             {
                 Inventory.Instance.consumeItem(InventoryItem.rawFood, rawFoodConsume);
-                continue;
-            }else if (Inventory.Instance.getItemAmount(InventoryItem.poisonedFood) >= rawFoodConsume)
-            {
-                Inventory.Instance.consumeItem(InventoryItem.poisonedFood, rawFoodConsume);
-                poisonedPeople.Add(relatedCharacters[i].name);
-                relatedCharacters[i].doDamage(poisonFoodDamage);
+                rawPeople.Add(relatedCharacters[i].name);
+                relatedCharacters[i].decreaseStatus(CharacterStatus.sanity, poisonFoodDamage);
                 continue;
             }
+            //}else if (Inventory.Instance.getItemAmount(InventoryItem.poisonedFood) >= rawFoodConsume)
+            //{
+            //    Inventory.Instance.consumeItem(InventoryItem.poisonedFood, rawFoodConsume);
+            //    poisonedPeople.Add(relatedCharacters[i].name);
+            //    relatedCharacters[i].doDamage(poisonFoodDamage);
+            //    continue;
+            //}
             else
             {
 
                 hungryPeople.Add(relatedCharacters[i].name);
-                relatedCharacters[i].doDamage(hungryDamage);
+                relatedCharacters[i].decreaseStatus(CharacterStatus.hungry, hungryDamage);
+                //relatedCharacters[i].doDamage(hungryDamage);
             }
         }
-        if (poisonedPeople.Count > 0)
+        if (rawPeople.Count > 0)
         {
-            foreach (var name in poisonedPeople)
+            foreach (var name in rawPeople)
             {
                 res += name + " ";
             }
-            res += "ate poisoned food and get unhealthy. ";
+            res += "ate saw food and feel unhappy. ";
         }
         if (hungryPeople.Count > 0)
         {
@@ -73,9 +116,9 @@ public class PlayerTurnView : TurnView
             {
                 res += name + " ";
             }
-            res += "had nothing to eat and get unhealthy. ";
+            res += "had nothing to eat and get hungry. ";
         }
-        if(hungryPeople.Count == 0 && poisonedPeople.Count == 0)
+        if(hungryPeople.Count == 0 && rawPeople.Count == 0)
         {
             res += "Everyone enjoyed their food and get happy.";
         }

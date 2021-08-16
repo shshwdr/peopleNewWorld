@@ -12,7 +12,9 @@ public class ActionSelection : MonoBehaviour
     {{CharacterAction.collect, "Collect"},
         {CharacterAction.hunt, "Hunt"},
         {CharacterAction.scout, "Scout"},
-        {CharacterAction.rest, "Rest"}
+        {CharacterAction.rest, "Rest"},
+        {CharacterAction.cook, "Cook"},
+        {CharacterAction.forge, "Forge"}
     };
     public Transform actionButtonParent;
     public GameObject actionButtonPrefab;
@@ -28,10 +30,19 @@ public class ActionSelection : MonoBehaviour
         for (int i = 0; i < System.Enum.GetValues(typeof(CharacterAction)).Length; i++)
         {
             GameObject go = Instantiate(actionButtonPrefab, actionButtonParent);
-            go.GetComponent<ActionButton>().Init(i,this);
+            go.GetComponent<ActionButton>().Init(i, this);
+            if (MainGameManager.Instance.unlockedAction[i])
+            {
+            }
+            else
+            {
+                go.SetActive(false);
+            }
         }
         EventPool.OptIn<int>("mouseDownCharacter", getMouseDown);
     }
+
+    
 
     private void OnMouseDown()
     {
@@ -43,6 +54,20 @@ public class ActionSelection : MonoBehaviour
         //Debug.Log("on mouse down " + character.name);
         actionButtonParent.gameObject.SetActive(true);
         ControlManager.Instance.shouldBlockInput = true;
+
+        for (int i = 0; i < System.Enum.GetValues(typeof(CharacterAction)).Length; i++)
+        {
+            GameObject go = actionButtonParent.GetChild(i).gameObject;
+            if (MainGameManager.Instance.unlockedAction[i])
+            {
+                go.SetActive(true);
+            }
+            else
+            {
+                go.SetActive(false);
+            }
+        }
+
     }
 
     void getMouseDown(int i)

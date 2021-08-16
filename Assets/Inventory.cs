@@ -2,14 +2,15 @@ using Pool;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public enum InventoryItem { processedFood, rawFood, poisonedFood, weapon, }
+public enum InventoryItem { processedFood, rawFood, /*poisonedFood,*/materials, weapon, }
 public class Inventory : Singleton<Inventory>
 {
     public Dictionary<InventoryItem, string> inventoryNameMap = new Dictionary<InventoryItem, string>()
     {
         {InventoryItem.processedFood,"Processed Food" },
         {InventoryItem.rawFood,"Raw Food" },
-        {InventoryItem.poisonedFood,"Poisoned Food" },
+        //{InventoryItem.poisonedFood,"Poisoned Food" },
+        {InventoryItem.materials,"Materials" },
         {InventoryItem.weapon,"Weapon" },
     };
     Dictionary<InventoryItem, int> invenrotyAmount;
@@ -18,6 +19,8 @@ public class Inventory : Singleton<Inventory>
     {
         invenrotyAmount = new Dictionary<InventoryItem, int>();
         invenrotyAmount[InventoryItem.processedFood] = 10;
+        invenrotyAmount[InventoryItem.rawFood] = 5;
+        invenrotyAmount[InventoryItem.materials] = 5;
     }
 
     public string inventoryItemsToString(int[] collects)

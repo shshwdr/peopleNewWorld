@@ -18,6 +18,8 @@ public class HuntTurnView : TurnView
         hideRelatedCharacters();
         showMonsterGroups();
         cancelButton.SetActive(true);
+
+        TutorialManager.Instance.unlockAction((int)CharacterAction.rest);
     }
 
     public void onClickCancelButton()

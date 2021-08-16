@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameTurn { player, collect, hunt, scout, rest,move}
+public enum GameTurn { player, collect, forge,hunt, cook,scout, rest,move}
 public class GameTurnManager : Singleton<GameTurnManager>
 {
     public int currentTurnNum = 0;

@@ -14,7 +14,7 @@ public class TutorialPanel : Singleton<TutorialPanel>
 
     public CanvasGroup group;
     public float duration = 0.3f;
-    bool isShowing;
+    public bool isShowing;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +24,7 @@ public class TutorialPanel : Singleton<TutorialPanel>
     public void Init(string t, Action y = null)
     {
         group.alpha = 1;
-
+        Time.timeScale = 0;
         group.interactable = true;
         group.blocksRaycasts = true;
         text.text = t;
@@ -34,7 +34,7 @@ public class TutorialPanel : Singleton<TutorialPanel>
             if(y!=null)
                 y();
             Hide();
-           // TutorialManager.Instance.finishPopup(t);
+           TutorialManager.Instance.finishPopup(t);
         });
        // HUD.Instance.togglePause();
         isShowing = true;
@@ -68,6 +68,7 @@ public class TutorialPanel : Singleton<TutorialPanel>
         group.interactable = false;
         group.blocksRaycasts = false;
         ControlManager.Instance.shouldBlockInput = false;
+        Time.timeScale = 1;
     }
     // Update is called once per frame
     void Update()

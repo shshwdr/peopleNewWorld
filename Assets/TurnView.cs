@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class TurnView:MonoBehaviour
 {
@@ -13,18 +14,25 @@ public class TurnView:MonoBehaviour
     public TMP_Text descriptionText;
     public GameObject nextButton;
 
+
     protected List<Character> relatedCharacters;
     public virtual void startTurnView()
     {
         setCharactersPosition();
-        uiPanel.SetActive(true);
+        //uiPanel.SetActive(true);
         view.SetActive(true);
-        updateDescriptionText();
+        StartCoroutine(moveCharacters());
     }
+
 
     public virtual void stopTurnView()
     {
         hideRelatedCharacters();
+        for (int i = 0; i < CharacterManager.Instance.characterList.Count; i++)
+        {
+            var character = CharacterManager.Instance.characterList[i];
+            character.cleanTempItems();
+        }
         uiPanel.SetActive(false);
         view.SetActive(false);
     }
@@ -43,6 +51,7 @@ public class TurnView:MonoBehaviour
         for (int i = 0; i < CharacterManager.Instance.characterList.Count; i++)
         {
             var character = CharacterManager.Instance.characterList[i];
+            character.hideStatus();
             character.gameObject.SetActive(false);
         }
     }
@@ -63,9 +72,35 @@ public class TurnView:MonoBehaviour
         for (int i = 0; i < relatedCharacters.Count; i++)
         {
             var character = relatedCharacters[i];
-            character.transform.position = characterPositionParent.GetChild(i).position;
+            character.transform.position = characterPositionParent.GetChild(i).position - new Vector3(20,Random.Range(-10,10),0);
             character.gameObject.SetActive(true);
         }
+    }
+
+
+    IEnumerator moveCharacters()
+    {
+        for (int i = 0; i < relatedCharacters.Count; i++)
+        {
+            var character = relatedCharacters[i];
+            character.transform.DOMove(characterPositionParent.GetChild(i).position, 1);
+        }
+        yield return new WaitForSeconds(1);
+        afterMoveCharacter();
+
+    }
+
+    protected virtual void afterMoveCharacter()
+    {
+        loadTutorials();
+        uiPanel.SetActive(true);
+
+        updateDescriptionText();
+    }
+
+    protected virtual void loadTutorials()
+    {
+
     }
 
 }

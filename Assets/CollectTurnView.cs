@@ -6,10 +6,36 @@ using UnityEngine;
 public class CollectTurnView : TurnView
 {
     public int baseCollectValue = 3;
+    public float maxAffectRate = 0.1f;
+    public CharacterAbility affectAbility = CharacterAbility.Str;
+
+    public GameObject itemAmount;
+
+    public override void startTurnView()
+    {
+        base.startTurnView();
+    }
+
+    protected override void loadTutorials()
+    {
+
+        TutorialManager.Instance.unlockAction((int)CharacterAction.hunt);
+        TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialTurnIntro_Collect);
+    }
+
     protected override void updateDescriptionText()
     {
         base.updateDescriptionText();
-        int collectAmount = relatedCharacters.Count * baseCollectValue;
+        int collectAmount = 0;
+        foreach(var chara in relatedCharacters)
+        {
+            int charCollect = 0;
+            charCollect += baseCollectValue;
+            charCollect += Mathf.FloorToInt(chara.getAbility(affectAbility) * maxAffectRate);
+            collectAmount += charCollect;
+            showItemsCollected(chara, charCollect);
+        }
+        //relatedCharacters.Count * baseCollectValue;
         var collects = collectItems(collectAmount);
         descriptionText.text = collectString(collects);
         Inventory.Instance.addItems(collects);
@@ -18,20 +44,42 @@ public class CollectTurnView : TurnView
        // CityManager.Instance.collectItemsFromCurrentCity(collects);
     }
 
+    void showItemsCollected(Character chara, int amount)
+    {
+        for(int i = 0; i < amount; i++)
+        {
+            chara.addTempItem(0);
+        }
+    }
+
     string collectString(int[] collects)
     {
         string res = "Collected ";
-        bool collectedSomething = false;
         string inventoryString = Inventory.Instance. inventoryItemsToString(collects);
         res += inventoryString;
         if ((inventoryString.Length==0))
         {
-            res += "Nothing...";
+            res += "Nothing... ";
         }
         else
         {
 
-            res += "!";
+            res += "! ";
+        }
+
+        foreach (var chara in relatedCharacters)
+        {
+            chara.increaseAbility(affectAbility, 1);
+        }
+        if(relatedCharacters.Count > 1)
+        {
+
+            res += "They get stronger!";
+        }
+        else
+        {
+
+            res += "He get stronger!";
         }
         return res;
     }

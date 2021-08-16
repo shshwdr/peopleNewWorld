@@ -199,6 +199,8 @@ public class ScoutTurnView : TurnView
         {
             // all enemy die
             descriptionText.text = "found another city!";
+
+            TutorialManager.Instance.unlockAction((int)CharacterAction.rest + 1);
         }
         else if (res == 10)
         {

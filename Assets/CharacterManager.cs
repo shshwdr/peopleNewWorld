@@ -282,23 +282,24 @@ public class CharacterManager : Singleton<CharacterManager>
 
     void Awake()
     {
-        characterParent = new GameObject("characterParent");
+        characterParent =GameObject.Find ("characterParent");
     }
-    public void addCharacter()
+    public void addCharacter(int i )
     {
         //Transform position = characterPositionParent.GetChild(characterList.Count);
-        GameObject go = Instantiate(characterPrefab, characterParent.transform);
-        string name = "";
-        while (true)
-        {
-            int rand = Random.Range(0, boyNames.Length);
-            name = boyNames[rand];
-            if (!boyNameUsed.ContainsKey(name))
-            {
-                boyNameUsed[name] = true;
-                break;
-            }
-        }
+        //GameObject go = Instantiate(characterPrefab, characterParent.transform);
+        GameObject go = characterParent.transform.GetChild(i).gameObject;
+        //string name = "";
+        //while (true)
+        //{
+        //    int rand = Random.Range(0, boyNames.Length);
+        //    name = boyNames[rand];
+        //    if (!boyNameUsed.ContainsKey(name))
+        //    {
+        //        boyNameUsed[name] = true;
+        //        break;
+        //    }
+        //}
 
         go.GetComponent<Character>().Init(characterList.Count,name);
         characterList.Add(go.GetComponent< Character>());

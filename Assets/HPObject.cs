@@ -22,7 +22,7 @@ public class HPObject : MonoBehaviour
         hpbar = GetComponentInChildren<HPBar>();
     }
 
-    public void doDamage(int damage)
+    public virtual void doDamage(int damage)
     {
         hp -= damage;
         hpbar.updateCurrentValue(hp);
@@ -32,7 +32,7 @@ public class HPObject : MonoBehaviour
         }
     }
 
-    public void heal(int val)
+    public virtual void heal(int val)
     {
 
         hp += val;
@@ -46,5 +46,6 @@ public class HPObject : MonoBehaviour
             return;
         }
         isDead = true;
+
     }
 }

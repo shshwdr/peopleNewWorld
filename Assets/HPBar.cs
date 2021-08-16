@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class HPBar : MonoBehaviour
 {
-    Image image;
+    public Image image;
     float maxValue;
     float currentValue;
     private void Awake()
@@ -21,7 +22,11 @@ public class HPBar : MonoBehaviour
     public void updateCurrentValue(int v)
     {
         currentValue = v;
-        image.fillAmount = currentValue / maxValue;
+
+        DOTween.To(() => image.fillAmount, x => image.fillAmount = x, currentValue / maxValue, 1);
+
+
+        //image.fillAmount = currentValue / maxValue;
     }
 
     // Start is called before the first frame update
