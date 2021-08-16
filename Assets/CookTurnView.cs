@@ -29,13 +29,13 @@ public class CookTurnView : TurnView
             currentCollect += Mathf.FloorToInt(chara.getAbility(affectAbility) * maxAffectRate);
             currentCollect = Mathf.CeilToInt((float)currentCollect * (float)consumeFood / (float)maxConsumeFood);
             showItemsCollected(chara, currentCollect);
-            collectAmount += collectAmount;
+            collectAmount += currentCollect;
             consumeAmount += consumeFood;
         }
         //relatedCharacters.Count * baseCollectValue;
         //var collects = collectItems(collectAmount);
         descriptionText.text = "Cooked " + consumeAmount.ToString() + " " + Inventory.Instance.inventoryNameMap[InventoryItem.rawFood] + " to " +
-            collectAmount.ToString() + " " + Inventory.Instance.inventoryNameMap[InventoryItem.rawFood] + ". ";
+            collectAmount.ToString() + " " + Inventory.Instance.inventoryNameMap[InventoryItem.processedFood] + ". ";
         if (notEnoughRawFood)
         {
             descriptionText.text += "You can cook more but there is no " + Inventory.Instance.inventoryNameMap[InventoryItem.rawFood] + " left.";

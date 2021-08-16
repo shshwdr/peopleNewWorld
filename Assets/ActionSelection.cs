@@ -29,7 +29,8 @@ public class ActionSelection : MonoBehaviour
     {
         for (int i = 0; i < System.Enum.GetValues(typeof(CharacterAction)).Length; i++)
         {
-            GameObject go = Instantiate(actionButtonPrefab, actionButtonParent);
+            //GameObject go = Instantiate(actionButtonPrefab, actionButtonParent);
+            GameObject go = actionButtonParent.GetChild(i).gameObject;
             go.GetComponent<ActionButton>().Init(i, this);
             if (MainGameManager.Instance.unlockedAction[i])
             {
