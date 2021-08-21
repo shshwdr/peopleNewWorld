@@ -13,6 +13,7 @@ public class TurnView:MonoBehaviour
     public GameObject view;
     public TMP_Text descriptionText;
     public GameObject nextButton;
+    protected bool shouldMoveOut;
 
 
     protected List<Character> relatedCharacters;
@@ -102,6 +103,15 @@ public class TurnView:MonoBehaviour
             character.transform.DOMove(characterPositionParent.GetChild(i).position, 1);
         }
         yield return new WaitForSeconds(1);
+        if (shouldMoveOut)
+        {
+            SFXManager.Instance.playSFXRandom(SFXManager.Instance.characterAppear);
+            for (int i = 0; i < relatedCharacters.Count; i++)
+            {
+                var character = relatedCharacters[i];
+                character.transform.DOMove(characterPositionParent.GetChild(i).position + new Vector3(20, Random.Range(-10, 10),0), 1);
+            }
+        }
         afterMoveCharacter();
 
     }

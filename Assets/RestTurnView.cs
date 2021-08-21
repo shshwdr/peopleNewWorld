@@ -38,10 +38,13 @@ public class RestTurnView : TurnView
                 break;
             case 2:
                 MainGameManager.Instance.unlockedItem[0] = true;
+
+                CSDialogueManager.Instance.addDialogue(10);
                 TutorialManager.Instance.showTutorialPanel(string.Format(restReward_Bike, relatedCharacters[0].name));
                 airTank.SetActive(true);
                 break;
             case 3:
+                CSDialogueManager.Instance.addDialogue(11);
                 MainGameManager.Instance.unlockedItem[1] = true;
                 TutorialManager.Instance.showTutorialPanel(string.Format(restReward_Boat, relatedCharacters[0].name));
                 boat.SetActive(true);

@@ -78,6 +78,34 @@ public class CSDialogueManager : Singleton<CSDialogueManager>
 
                     PixelCrushers.DialogueSystem.DialogueManager.StartConversation("ending");
                     break;
+                case 6:
+
+                    PixelCrushers.DialogueSystem.DialogueManager.StartConversation("cook");
+                    break;
+                case 7:
+
+                    PixelCrushers.DialogueSystem.DialogueManager.StartConversation("forge");
+                    break;
+                case 8:
+
+                    PixelCrushers.DialogueSystem.DialogueManager.StartConversation("after arrive first place");
+                    break;
+                case 9:
+
+                    PixelCrushers.DialogueSystem.DialogueManager.StartConversation("meet water");
+                    break;
+                case 10:
+
+                    PixelCrushers.DialogueSystem.DialogueManager.StartConversation("horse");
+                    break;
+                case 11:
+
+                    PixelCrushers.DialogueSystem.DialogueManager.StartConversation("boat");
+                    break;
+                case 12:
+
+                    PixelCrushers.DialogueSystem.DialogueManager.StartConversation("center city");
+                    break;
             }
             finishedDialog[unFinishedDialog[0]] = true;
             unFinishedDialog.RemoveAt(0);

@@ -337,7 +337,7 @@ public class CharacterManager : Singleton<CharacterManager>
         switch (GameTurnManager.Instance.currentTurn)
         {
             case GameTurn.player:
-
+            case GameTurn.move:
                 return getCharacterWithoutScouting();
             default:
                 return getCharacterWithAction((CharacterAction)((int)GameTurnManager.Instance.currentTurn-1));

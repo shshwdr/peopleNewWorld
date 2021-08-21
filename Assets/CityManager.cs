@@ -140,6 +140,17 @@ public class CityManager : Singleton<CityManager>
 
             CSDialogueManager.Instance.addDialogue(5);
         }
+
+        else if (keyToCity[pos].name.Contains("next town"))
+        {
+
+            CSDialogueManager.Instance.addDialogue(8);
+        }
+        else if (keyToCity[pos].name.Contains("rest town") || keyToCity[pos].name.Contains("center town"))
+        {
+
+            CSDialogueManager.Instance.addDialogue(12);
+        }
         EventPool.Trigger("updateCityResource");
         EventPool.Trigger("updateCityMonster");
     }
@@ -185,6 +196,29 @@ public class CityManager : Singleton<CityManager>
                 }
                 z++;
             }
+        }
+
+
+
+        int total = 0;
+        foreach (var value in allCity[currentCityId].monsters)
+        {
+            total += value;
+        }
+        if (total < 4)
+        {
+            TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialAlert_NoAreaMonsterAlert);
+        }
+
+
+        total = 0;
+        foreach (var value in allCity[currentCityId].collectable)
+        {
+            total += value;
+        }
+        if (total < 8)
+        {
+            TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialAlert_NoAreaResourceAlert);
         }
     }
 
@@ -244,6 +278,7 @@ public class CityManager : Singleton<CityManager>
         allCity[currentCityId].monsters[index] -= 1;
 
         EventPool.Trigger("updateCityMonster");
+
     }
 
     // Update is called once per frame

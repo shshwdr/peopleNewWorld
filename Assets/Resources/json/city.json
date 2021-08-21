@@ -65,6 +65,13 @@
         "monsters":[0,0,8,8,10],
         "maxMonsterNumber":[3,4,4,4,4]
       },{
+        "name": "center town4",
+        "px": 7,
+        "py": 6,
+        "collectable": [3,8,8,0],
+        "monsters":[0,0,7,8,10],
+        "maxMonsterNumber":[3,4,4,4,4]
+      },{
         "name": "final town",
         "px": 12,
         "py": 6,

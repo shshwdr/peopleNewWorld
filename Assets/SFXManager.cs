@@ -12,12 +12,16 @@ public class SFXManager : Singleton<SFXManager>
     public AudioClip[] characterAppear;
     public AudioClip[] loseBattle;
     public AudioClip[] attackShake;
+    public AudioClip landingClip;
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }
-
+    public void playSound(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+    }
     public void playSFXRandom(AudioClip[] clips)
     {
         audioSource.PlayOneShot(clips[Random.Range(0, clips.Length)]);

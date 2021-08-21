@@ -9,7 +9,7 @@ public class TutorialManager : Singleton<TutorialManager>
     static public string tutorialActionIntro_Collect = "Each day you can select an action for each character to do.";
     static public string tutorialActionIntro_Collect2 = "For now let's just <color=red>Collect</color> resources for everybody and get familiar with this area!";
 
-    static public string tutorialActionIntro_Hunt = "You can select <color=red>Hunt</color> to fight some animals and get more resouces. ";
+    static public string tutorialActionIntro_Hunt = "You can click on character and select <color=red>Hunt</color> to fight some animals and get more resouces. ";
     static public string tutorialActionIntro_Hunt2 = "Click on some characters and select Hunt. \nRemember many hands make light work!";
 
     static public string tutorialActionIntro_Rest = "If any of the character get hurt, it's always a good idea to put him in <color=red>Rest</color>.";
@@ -25,11 +25,11 @@ public class TutorialManager : Singleton<TutorialManager>
 
 
     static public string tutorialTurnIntro_Cook = "You can cook food here, the amount each one can cook and the amount of cooked food is affect by the <color=red>Agility</color>.";
-    static public string tutorialTurnIntro_Cook2 = "Check the raw food remins! If there is no raw food left, you can't cook anything";
+    static public string tutorialTurnIntro_Cook2 = "Check the raw food remaining! If there is no raw food left, you can't cook anything";
 
 
     static public string tutorialTurnIntro_Forge = "You can forge weapon here, the material needed and the amount of weapon forged is affect by the <color=red>Dexterity</color>.";
-    static public string tutorialTurnIntro_Forge2 = "Check the material remins! If there is not enough material left, you can't forge anything";
+    static public string tutorialTurnIntro_Forge2 = "Check the material remaining! If there is not enough material left, you can't forge anything";
 
 
     static public string tutorialTurnIntro_Hunt = "While hunting, you need to first select a monster group to hunt, then arrange the position of characters to attack monsters.";
@@ -50,6 +50,10 @@ public class TutorialManager : Singleton<TutorialManager>
     static public string tutorialAlert_SanityAlertScout = "<color=red>Sanity</color> of scouter is too low! You are force to return when this happens!";
     static public string tutorialAlert_HealthAlert = "<color=red>Health</color> of some of you is too low! You can't do anything other than rest to heal when this happens!";
     static public string tutorialAlert_HungryAlert = "<color=red>Hunger</color> of some of you is too low! Your <color=red>Health</color> will keep decreasing when this happens!";
+    static public string tutorialAlert_NoInventoryAlert = "You are almost out of <color=red>Food</color>! Your crew are going to get hungry if they don't have food to eat!";
+    static public string tutorialAlert_NoAreaResourceAlert = "You are almost out of <color=red>Resources to collect</color>. You need to wait until the fruit get regenerated, do some hunt or move to other place!";
+    static public string tutorialAlert_NoAreaMonsterAlert = "You are almost out of <color=red>Monsters to hunt</color>. You need to wait until the monsters get back, do some collect or move to other place!";
+    static public string tutorialAlert_WaterAlert = "There are <color=red>Water</color> on the terrain. You need to make a detour or find a way to pass through it.";
 
     List<string> tutorialStack = new List<string>();
 

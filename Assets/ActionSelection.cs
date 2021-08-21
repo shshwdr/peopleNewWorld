@@ -104,6 +104,12 @@ public class ActionSelection : MonoBehaviour
         actionButtonParent.gameObject.SetActive(false);
 
     }
+
+    public void instantHide()
+    {
+
+        actionButtonParent.gameObject.SetActive(false);
+    }
     public void hideAllSelectionUI()
     {
         allSelectionUI.SetActive(false);

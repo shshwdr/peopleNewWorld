@@ -53,6 +53,7 @@ public class CookTurnView : TurnView
     {
 
         TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialTurnIntro_Cook);
+        CSDialogueManager.Instance.addDialogue(6);
     }
 
     void showItemsCollected(Character chara, int amount)

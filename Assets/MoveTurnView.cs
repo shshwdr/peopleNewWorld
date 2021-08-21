@@ -14,8 +14,9 @@ public class MoveTurnView : TurnView
     //}
     public override void startTurnView()
     {
-        base.startTurnView();
+        //shouldMoveOut = true;
         hideMap();
+        base.startTurnView();
     }
 
 

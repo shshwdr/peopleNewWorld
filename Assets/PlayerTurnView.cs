@@ -162,6 +162,11 @@ public class PlayerTurnView : TurnView
 
             }
         }
+
+        if (Inventory.Instance.getItemAmount(InventoryItem.processedFood) + Inventory.Instance.getItemAmount(InventoryItem.rawFood) <8)
+        {
+            TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialAlert_NoInventoryAlert);
+        }
         if (rawPeople.Count > 0)
         {
             foreach (var name in rawPeople)

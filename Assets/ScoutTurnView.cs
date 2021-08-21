@@ -226,9 +226,9 @@ public class ScoutTurnView : TurnView
         currentScoutKeyPosition = nextKeyPosition;
         hideRelatedCharacters();
         showRelatedCharacters();
-        setCharactersPosition();
         
         mapController.closeMap();
+        setCharactersPosition();
         map.SetActive(false);
 
 
@@ -319,6 +319,9 @@ public class ScoutTurnView : TurnView
         {
             // all enemy die
             descriptionText.text = relatedCharacters[0].name + " scout a beach, nice place but there are water blocks out way...";
+
+            CSDialogueManager.Instance.addDialogue(9);
+            TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialAlert_WaterAlert);
         }
         else if (res == 3)
         {

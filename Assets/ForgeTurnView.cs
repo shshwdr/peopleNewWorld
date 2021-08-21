@@ -52,6 +52,7 @@ public class ForgeTurnView : TurnView
     protected override void loadTutorials()
     {
 
+        CSDialogueManager.Instance.addDialogue(7);
         TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialTurnIntro_Forge);
     }
 

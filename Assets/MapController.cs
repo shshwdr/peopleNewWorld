@@ -43,8 +43,8 @@ public class MapController : Singleton<MapController>
                     position = CityManager.Instance.worldPositionOfKey(ScoutTurnView.Instance.currentScoutKeyPosition);
                     position += (Vector3)moveDir[i] * distance;
                 }
-
-
+                character.GetComponent<ActionSelection>().cancelSelection();
+                character.GetComponent<ActionSelection>().hideAllSelectionUI();
                 character.transform.position = new Vector3(position.x, position.y, character.transform.position.z);
                 character.gameObject.SetActive(true);
                 character.transform.localScale = new Vector3(0.25f, 0.25f, 1);
@@ -57,6 +57,7 @@ public class MapController : Singleton<MapController>
 
                 var character = relatedCharacters[i];
                 character.transform.localScale = new Vector3(1, 1, 1);
+                character.GetComponent<ActionSelection>().showAllSelectionUI();
 
             }
             GameTurnManager.Instance.currentTurnView().hideRelatedCharacters();

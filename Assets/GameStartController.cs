@@ -24,6 +24,7 @@ public class GameStartController : Singleton<GameStartController>
 
             MusicManager.Instance.playStart();
             spaceShip.GetComponent<Animator>().enabled = (true);
+            SFXManager.Instance.playSound(SFXManager.Instance.landingClip);
             StartCoroutine(waitLandingFinished());
         }
         else
