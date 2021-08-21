@@ -12,6 +12,8 @@ public class MonsterInfo
     public float basicHitRate;
     public float basicAvoidRate;
     public int[] reward;
+    public int id;
+    public Sprite image { get { return Resources.Load<Sprite>("monstersIcon/" + name); } }
 }
 
 public class AllMonsterInfo
@@ -21,6 +23,7 @@ public class AllMonsterInfo
 public class MonsterManager : Singleton<MonsterManager>
 {
     List<MonsterInfo> allMonster;
+
     // Start is called before the first frame update
     void Awake()
     {

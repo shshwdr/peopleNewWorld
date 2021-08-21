@@ -5,6 +5,9 @@ using UnityEngine;
 public enum InventoryItem { processedFood, rawFood, /*poisonedFood,*/materials, weapon, }
 public class Inventory : Singleton<Inventory>
 {
+
+    public Sprite[] itemSprites;
+
     public Dictionary<InventoryItem, string> inventoryNameMap = new Dictionary<InventoryItem, string>()
     {
         {InventoryItem.processedFood,"Processed Food" },

@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using PixelCrushers.DialogueSystem;
 
-public enum MapTileType { dessert,swamp,city}
+public enum MapTileType { dessert,swamp,beach, water,city}
 public class ScoutTurnView : TurnView
 {
 
@@ -13,7 +13,8 @@ public class ScoutTurnView : TurnView
     public GameObject cancelButton;
     public Transform directionsParent;
     bool hasStartedAScout;
-
+    public int lossSanity = 25;
+    MapTileType currentMapTileType;
     public Character scoutCharacter;
 
     public MapController mapController;
@@ -55,9 +56,35 @@ public class ScoutTurnView : TurnView
         {
             currentScoutKeyPosition = CityManager.Instance.keyPositoinOfCurrentBase();
         }
-        base.startTurnView();
+
+        setCharactersPosition();
+        //uiPanel.SetActive(true);
+        view.SetActive(true);
+        //base.startTurnView();
         //hideRelatedCharacters();
         mapController.openMap();
+
+
+        int res = (int)currentMapTileType;
+        if (!hasStartedAScout)
+        {
+            res = 4;
+        }
+        else
+        {
+            if (currentMapTileType == MapTileType.city)
+            {
+                var cityInfo = CityManager.Instance.keyToCity[currentScoutKeyPosition];
+                if (cityInfo.isDestination)
+                {
+                    res += 1;
+                }
+            }
+        }
+
+        uiPanel.SetActive(true);
+        updateBackground(res);
+
 
         nextButton.SetActive(false);
         cancelButton.SetActive(true);
@@ -68,6 +95,8 @@ public class ScoutTurnView : TurnView
         //    cancelButton.SetActive(true);
         //}
         showDirections();
+
+        TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialTurnIntro_Scout);
     }
 
     public void onClickCancelButton()
@@ -77,7 +106,7 @@ public class ScoutTurnView : TurnView
         {
             gameOver(10);
 
-            mapController.openMap();
+            mapController.closeMap();
             cancelCurrentScout();
         });
         //Debug.Log("cancel");
@@ -96,6 +125,8 @@ public class ScoutTurnView : TurnView
         {
             cancelCurrentScout();
         }
+
+        uiPanel.SetActive(false);
     }
 
     public void showDirections()
@@ -113,26 +144,44 @@ public class ScoutTurnView : TurnView
                     if (currentScoutKeyPosition.x >= CityManager.Instance.mapTileWidth-1)
                     {
                         dir.SetActive(false);
+                        continue;
                     }
                     break;
                 case 1:
                     if (currentScoutKeyPosition.y<=0)
                     {
                         dir.SetActive(false);
+                        continue;
                     }
                     break;
                 case 2:
                     if (currentScoutKeyPosition.x <=0)
                     {
                         dir.SetActive(false);
+                        continue;
                     }
                     break;
                 case 3:
                     if (currentScoutKeyPosition.y >= CityManager.Instance.mapTileHeight-1)
                     {
                         dir.SetActive(false);
+                        continue;
                     }
                     break;
+            }
+            var nextPosition = currentScoutKeyPosition + dirIntToVector2(i);
+            if(CityManager.Instance.getTileMapByKey(nextPosition) == MapTileType.water)
+            {
+                if (MainGameManager.Instance.unlockedItem[1])
+                {
+                    continue;
+                }
+                else
+                {
+
+                    dir.SetActive(false);
+                    continue;
+                }
             }
         }
     }
@@ -171,65 +220,149 @@ public class ScoutTurnView : TurnView
         Vector3 nextWorldPosition = CityManager.Instance.worldPositionOfKey(nextKeyPosition);
         relatedCharacters[0].transform.DOMove(nextWorldPosition, 1);
         yield return new WaitForSeconds(1);
-        MapTileType type = CityManager.Instance.unlockTileMapByKey(nextKeyPosition);
+        currentMapTileType = CityManager.Instance.unlockTileMapByKey(nextKeyPosition);
+
+
         currentScoutKeyPosition = nextKeyPosition;
         hideRelatedCharacters();
         showRelatedCharacters();
-        mapController.openMap();
+        setCharactersPosition();
+        
+        mapController.closeMap();
         map.SetActive(false);
-        gameOver((int)type);
+
+
+
+        int res = (int)currentMapTileType;
+        if (!hasStartedAScout)
+        {
+            res = 4;
+        }
+        else
+        {
+            if (currentMapTileType == MapTileType.city)
+            {
+                var cityInfo = CityManager.Instance.keyToCity[currentScoutKeyPosition];
+                if (cityInfo.isDestination)
+                {
+                    res += 1;
+                }
+            }
+        }
+        updateBackground(res);
+
+
+        StartCoroutine(moveCharacters());
+
+        //gameOver((int)type);
     }
-    void gameOver(int res)
+
+    protected override void afterMoveCharacter()
     {
+        base.afterMoveCharacter();
+
+        for (int i = 0; i < relatedCharacters.Count; i++)
+        {
+            relatedCharacters[i].showStatus(CharacterStatus.sanity);
+            int sanity = lossSanity;
+            if (MainGameManager.Instance.unlockedItem[0])
+            {
+                sanity = sanity * 2 / 3;
+            }
+            relatedCharacters[i].decreaseStatus(CharacterStatus.sanity, sanity);
+        }
+        gameOver((int)currentMapTileType);
+
+    }
+
+    void updateBackground(int res)
+    {
+        foreach(Transform b in backgrounds)
+        {
+            b.gameObject.SetActive(false);
+        }
         if (res != 10)
         {
             backgrounds.GetChild(res).gameObject.SetActive(true);
         }
+        else
+        {
+
+            backgrounds.GetChild(backgrounds.childCount-1).gameObject.SetActive(true);
+        }
+    }
+    void gameOver(int res)
+    {
+        
+        if(currentMapTileType == MapTileType.city)
+        {
+            var cityInfo = CityManager.Instance.keyToCity[currentScoutKeyPosition];
+            if (cityInfo.isDestination)
+            {
+
+                CSDialogueManager.Instance.addDialogue(4);
+                res += 1;
+            }
+        }
+        updateBackground(res);
         if (res == 0)
         {
             //all character die
-            descriptionText.text = "scout a new place, a dessert place, not suitable to live";
+            descriptionText.text = "Scout a dessert place, not suitable to live... Keep going!";
         }
         else if (res == 1)
         {
             // all enemy die
-            descriptionText.text = "scout a new place, a swamp place, not suitable to live";
+            descriptionText.text = relatedCharacters[0].name + " scout a swamp place, not suitable to live...";
         }
-        else if (res ==2)
+        else if (res == 2)
         {
             // all enemy die
-            descriptionText.text = "found another city!";
+            descriptionText.text = relatedCharacters[0].name + " scout a beach, nice place but there are water blocks out way...";
+        }
+        else if (res == 3)
+        {
+            // all enemy die
+            descriptionText.text = relatedCharacters[0].name + " scout a water, thanks for the boat we made we can move across water now...";
+        }
+        else if (res == 4)
+        {
+            // all enemy die
+            descriptionText.text = relatedCharacters[0].name +" found a plain place that the team can live!";
 
             TutorialManager.Instance.unlockAction((int)CharacterAction.rest + 1);
+
+            CSDialogueManager.Instance.addDialogue(3);
+        }
+        else if (res == 5)
+        {
+            // all enemy die
+            descriptionText.text = relatedCharacters[0].name + " found the place with the fuel we need!";
+
+            TutorialManager.Instance.unlockAction((int)CharacterAction.rest + 1);
+
+            CSDialogueManager.Instance.addDialogue(3);
         }
         else if (res == 10)
         {
             //cancel
-            descriptionText.text = "Cancelled the scout.";
+            descriptionText.text = relatedCharacters[0].name+" returned back to the base.";
         }
 
+        if (relatedCharacters[0].getStatus(CharacterStatus.sanity) < MainGameManager.Instance.forceRestSanity)
+        {
+            descriptionText.text += "Sanity too low to keep scouting.";
+            TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialAlert_SanityAlertScout);
+            cancelCurrentScout();
+        }
+
+        directionsParent.gameObject.SetActive(false);
 
         cancelButton.SetActive(false);
         nextButton.SetActive(true);
 
     }
 
-    //public override void setCharactersPosition()
-    //{
-    //    if (relatedCharacters == null)
-    //    {
-    //        relatedCharacters = CharacterManager.Instance.getCharacters();
-    //    }
-    //    for (int i = 0; i < relatedCharacters.Count; i++)
-    //    {
-    //        var character = relatedCharacters[i];
-    //        var position = CityManager.Instance.worldPositionOfKey(currentScoutKeyPosition);
-    //        character.transform.position = new Vector3(position.x, position.y, character.transform.position .z);
-    //        character.gameObject.SetActive(true);
-    //        character.transform.localScale = new Vector3(0.3f, 0.3f, 1);
-    //        break;
-    //    }
-    //}
 
     public override void stopTurnView()
     {

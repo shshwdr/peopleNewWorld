@@ -9,7 +9,8 @@ public class HPObject : MonoBehaviour
     public bool isDead;
     public bool temporaryLeave;
     HPBar hpbar;
-
+    public Animator animator;
+    
     public virtual int attack { get { return 1; } }
     public void Init()
     {
@@ -19,12 +20,13 @@ public class HPObject : MonoBehaviour
     }
     protected virtual void Awake()
     {
-
+        animator = GetComponentInChildren<Animator>();
         hpbar = GetComponentInChildren<HPBar>();
     }
 
     public virtual void doDamage(int damage)
     {
+        animator.SetTrigger("hit");
         hp -= damage;
         hpbar.updateCurrentValue(hp);
         if (hp <= 0)
@@ -42,6 +44,7 @@ public class HPObject : MonoBehaviour
 
     public virtual void die()
     {
+        animator.SetTrigger("die");
         if (isDead)
         {
             return;

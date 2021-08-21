@@ -29,7 +29,19 @@ PrefabInstance:
       objectReference: {fileID: 6573085497441347981, guid: 1df79d213c095124d9939e4a11de4f25, type: 3}
     - target: {fileID: 7824192019909680481, guid: f2a96fe020fa5354c8e6d1d8e4d03785, type: 3}
       propertyPath: m_Name
-      value: cookedMeat
+      value: rawFood
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824192019909680482, guid: f2a96fe020fa5354c8e6d1d8e4d03785, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824192019909680482, guid: f2a96fe020fa5354c8e6d1d8e4d03785, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824192019909680482, guid: f2a96fe020fa5354c8e6d1d8e4d03785, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7824192019909680483, guid: f2a96fe020fa5354c8e6d1d8e4d03785, type: 3}
       propertyPath: m_RootOrder

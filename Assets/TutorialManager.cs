@@ -6,13 +6,13 @@ public class TutorialManager : Singleton<TutorialManager>
 {
     public bool skipTutorial;
 
-    static public string tutorialActionIntro_Collect = "Each day you can select an action for each character to do. \nClick on character and select an action.";
-    static public string tutorialActionIntro_Collect2 = "For now let's just collect resources for everybody and get familiar with this area!";
+    static public string tutorialActionIntro_Collect = "Each day you can select an action for each character to do.";
+    static public string tutorialActionIntro_Collect2 = "For now let's just <color=red>Collect</color> resources for everybody and get familiar with this area!";
 
-    static public string tutorialActionIntro_Hunt = "You can select hunt to fight some animals and get more resouces. Remember many hands make light work!";
+    static public string tutorialActionIntro_Hunt = "You can select <color=red>Hunt</color> to fight some animals and get more resouces. ";
+    static public string tutorialActionIntro_Hunt2 = "Click on some characters and select Hunt. \nRemember many hands make light work!";
 
-    static public string tutorialActionIntro_Rest = "If any of the character get hurt, it's always a good idea to put him in rest.";
-    static public string tutorialActionIntro_Rest2 = "And you might find something interesting while rest... Try it!";
+    static public string tutorialActionIntro_Rest = "If any of the character get hurt, it's always a good idea to put him in <color=red>Rest</color>.";
 
 
     static public string tutorialActionIntro_Scout = "We might have explored enough for current place. It's time to scout for other places. You can only send one scout at a time since we can't afford someone destroy the rocket!";
@@ -38,19 +38,34 @@ public class TutorialManager : Singleton<TutorialManager>
     static public string tutorialTurnIntro_Hunt4 = "If you have weapons, they will be used automatically and deal more damage to monster";
 
 
+    static public string tutorialTurnIntro_Rest = "You can rest here and restore <color=red>Health</color> and <color=red>Sanity</color>.";
+    static public string tutorialTurnIntro_Rest2 = "Sometimes you can find something special here while resting. The chance to find stuff is decided by <color=red>Inteligence</color>.";
+
+    static public string tutorialTurnIntro_Scout = "You can scout nearby places. Your target is to find another place for all of you to settle up.";
+    static public string tutorialTurnIntro_Scout2 = "Click the directions to move each day. Scout would cost lots of sanity, don't force yourself!";
+
+
+
+    static public string tutorialAlert_SanityAlert = "<color=red>Sanity</color> of some of you is too low! You can't do anything other than rest to heal when this happens!";
+    static public string tutorialAlert_SanityAlertScout = "<color=red>Sanity</color> of scouter is too low! You are force to return when this happens!";
+    static public string tutorialAlert_HealthAlert = "<color=red>Health</color> of some of you is too low! You can't do anything other than rest to heal when this happens!";
+    static public string tutorialAlert_HungryAlert = "<color=red>Hunger</color> of some of you is too low! Your <color=red>Health</color> will keep decreasing when this happens!";
+
     List<string> tutorialStack = new List<string>();
 
     Dictionary<string, bool> hadTutorialShown = new Dictionary<string, bool>();
 
     Dictionary<string, string> finishDialogToStartDialog = new Dictionary<string, string>() {
         {tutorialActionIntro_Collect,tutorialActionIntro_Collect2 },
-        {tutorialActionIntro_Rest,tutorialActionIntro_Rest2 },
+        {tutorialActionIntro_Hunt,tutorialActionIntro_Hunt2 },
         {tutorialTurnIntro_Collect,tutorialTurnIntro_Collect2 },
         {tutorialTurnIntro_Cook,tutorialTurnIntro_Cook2 },
         {tutorialTurnIntro_Forge,tutorialTurnIntro_Forge2 },
         {tutorialTurnIntro_Hunt,tutorialTurnIntro_Hunt2 },
         {tutorialTurnIntro_Hunt2,tutorialTurnIntro_Hunt3 },
         {tutorialTurnIntro_Hunt3,tutorialTurnIntro_Hunt4 },
+        {tutorialTurnIntro_Rest,tutorialTurnIntro_Rest2 },
+        {tutorialTurnIntro_Scout,tutorialTurnIntro_Scout2 },
     };
 
     public void finishPopup(string key)

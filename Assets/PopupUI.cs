@@ -8,7 +8,7 @@ public class PopupUI : MonoBehaviour
     void Start()
     {
         transform.DOJump(transform.position, 1, 1, 1f);
-        Destroy(gameObject, 1);
+        Destroy(gameObject, 5);
     }
 
     // Update is called once per frame

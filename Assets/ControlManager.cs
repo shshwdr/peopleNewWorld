@@ -12,11 +12,21 @@ public class ControlManager : Singleton<ControlManager>
         return shouldBlockInput;
     }
 
-    public void createPopupUI(string text,Vector3 position)
+    public void createPopupUI(string text,Vector3 position, Color color)
     {
-        var go = Instantiate(popupUI);
+        if (popupUI == null)
+        {
+            popupUI = null;
+        }
+        var go = Instantiate(popupUI,transform);
         go.GetComponentInChildren<TMP_Text>().text = text;
         go.transform.position = position;
+        go.GetComponentInChildren<TMP_Text>().color = color;
+    }
+
+    public void cleanPopups()
+    {
+        Utils.destroyAllChildren(transform);
     }
 
     // Start is called before the first frame update

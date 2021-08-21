@@ -18,7 +18,7 @@ public class CollectTurnView : TurnView
 
     protected override void loadTutorials()
     {
-
+        CSDialogueManager.Instance.addDialogue(0);
         TutorialManager.Instance.unlockAction((int)CharacterAction.hunt);
         TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialTurnIntro_Collect);
     }
@@ -69,7 +69,7 @@ public class CollectTurnView : TurnView
 
         foreach (var chara in relatedCharacters)
         {
-            chara.increaseAbility(affectAbility, 1);
+            chara.increaseAbility(affectAbility, Random.Range( 1,3));
         }
         if(relatedCharacters.Count > 1)
         {

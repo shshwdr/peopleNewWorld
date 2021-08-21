@@ -9,6 +9,9 @@ public class HuntTurnView : TurnView
 
     public GameObject cancelButton;
     public GameObject attackButton;
+
+    public int winSanityLoss = 5;
+    public int lossSanityLoss = 15;
     MonsterGroup selectedGroup;
     int[] totalReward;
     public override void startTurnView()
@@ -33,7 +36,10 @@ public class HuntTurnView : TurnView
                 continue;
             }
             character.temporaryLeave = false;
+            character.GetComponent<Collider2D>().isTrigger = false;
         }
+
+        MusicManager.Instance.playBattle();
     }
 
 
@@ -56,6 +62,7 @@ public class HuntTurnView : TurnView
 
     public void onAttackButton()
     {
+        ControlManager.Instance.cleanPopups();
         attackButton.SetActive(false);
         StartCoroutine(playerAttack());
     }
@@ -89,7 +96,7 @@ public class HuntTurnView : TurnView
             enemyAllDead = false;
             break;
         }
-        if(playerAllDead == true)
+        if (playerAllDead == true)
         {
             return 1;
         }
@@ -112,7 +119,7 @@ public class HuntTurnView : TurnView
             {
                 continue;
             }
-            monster.transform.DOShakePosition(0.7f);
+            //monster.transform.DOShakePosition(0.7f);
             var characterID = Utils.findClosestIndex(monster.transform, relatedCharacters);
             var targetCharacter = relatedCharacters[characterID];
 
@@ -120,25 +127,25 @@ public class HuntTurnView : TurnView
             var monsterAvoid = targetCharacter.avoidRate;
             var characterHit = monster.hitRate;
             var avoidRate = monsterAvoid * characterHit;
-
+            monster.animator.SetTrigger("attack");
             float rand = Random.Range(0f, 1f);
             if (rand < avoidRate)
             {
                 //hit
 
                 targetCharacter.doDamage(monster.attack);
-                ControlManager.Instance.createPopupUI("-" + monster.attack, targetCharacter.transform.position);
+                //ControlManager.Instance.createPopupUI("-" + monster.attack, targetCharacter.transform.position,Color.red);
                 targetCharacter.temporaryLeave = true;
 
             }
             else
             {
 
-                ControlManager.Instance.createPopupUI("Miss", targetCharacter.transform.position);
+                ControlManager.Instance.createPopupUI("Miss", targetCharacter.transform.position,Color.yellow);
             }
 
             // targetCharacter.transform.DOShakePosition(0.9f,1f,5);
-            targetCharacter.transform.DOPunchScale(Vector3.one, 0.9f, 10, 0.5f);
+            //targetCharacter.transform.DOPunchScale(Vector3.one, 0.9f, 10, 0.5f);
             yield return new WaitForSeconds(1);
 
             if (rand < avoidRate)
@@ -146,7 +153,10 @@ public class HuntTurnView : TurnView
 
                 //character go away
 
+                yield return new WaitForSeconds(0.5f);
                 targetCharacter.transform.DOMove(targetCharacter.transform.position + new Vector3(20, Random.Range(-10, 10), 0), 1);
+
+                SFXManager.Instance.playSFXRandom(SFXManager.Instance.loseBattle);
                 yield return new WaitForSeconds(1);
             }
 
@@ -168,7 +178,8 @@ public class HuntTurnView : TurnView
             {
                 continue;
             }
-            character.transform.DOShakePosition(0.7f);
+            //character.transform.DOShakePosition(0.7f);
+            SFXManager.Instance.playSFXRandom(SFXManager.Instance.attackShake);
             var monsterID = Utils.findClosestIndex(character.transform, monsters);
             var targetMonster = monsters[monsterID];
 
@@ -182,19 +193,31 @@ public class HuntTurnView : TurnView
             {
                 //hit
 
+                if (Inventory.Instance.getItemAmount(InventoryItem.weapon) >= 1)
+                {
+
+                    character.animator.SetTrigger("attackS");
+                }
+                else
+                {
+
+                    character.animator.SetTrigger("attack");
+                }
+
                 targetMonster.doDamage(character.attack);
-                ControlManager.Instance.createPopupUI("-" + character.attack, targetMonster.transform.position);
+                ControlManager.Instance.createPopupUI("-" + character.attack, targetMonster.transform.position, Color.red);
             }
             else
             {
 
-                ControlManager.Instance.createPopupUI("Miss", targetMonster.transform.position);
+                ControlManager.Instance.createPopupUI("Miss", targetMonster.transform.position, Color.yellow);
             }
 
 
-            targetMonster.transform. DOPunchScale(Vector3.one, 0.9f,10,0.5f);//( DOShakePosition(0.9f);
+            //targetMonster.transform.DOPunchScale(Vector3.one, 0.9f, 10, 0.5f);//( DOShakePosition(0.9f);
             if (targetMonster.isDead)
             {
+                CityManager.Instance.killedMonster( targetMonster.info.id);
                 addReward(targetMonster);
             }
             int gameover = checkGameOver();
@@ -216,25 +239,46 @@ public class HuntTurnView : TurnView
 
     void gameOver(int res)
     {
-        if(res == 1)
+
+        
+        for (int i = 0; i < relatedCharacters.Count; i++)
+        {
+            relatedCharacters[i].showStatus(CharacterStatus.sanity);
+            if(res == 2)
+            {
+
+                relatedCharacters[i].decreaseStatus(CharacterStatus.sanity, winSanityLoss);
+                var affectAbility =  Random.Range(0, 4);
+                relatedCharacters[i].increaseAbility((CharacterAbility) affectAbility, 2);
+            }
+            else
+            {
+
+                relatedCharacters[i].decreaseStatus(CharacterStatus.sanity, lossSanityLoss);
+            }
+        }
+
+
+        CSDialogueManager.Instance. addDialogue(1);
+        if (res == 1)
         {
             //all character die
-            descriptionText.text = "You lose. ";
+            descriptionText.text = "You lose the battle, you feel bad about it. ";
         }
         else if (res == 2)
         {
             // all enemy die
-            descriptionText.text = "You win. ";
+            descriptionText.text = "You won! You feel bad for the animals but you need to survive.";
         }
-        else if(res == 3)
+        else if (res == 3)
         {
             //cancel
-            descriptionText.text = "Cancelled the hunt. ";
+            descriptionText.text = "Cancelled the hunt. you feel bad because you might get hungry because of not geting enough food. ";
         }
         string rewardString = Inventory.Instance.inventoryItemsToString(totalReward);
         if (rewardString.Length > 0)
         {
-            descriptionText.text += "You got "+ rewardString+ " in this battle!";
+            descriptionText.text += "You got " + rewardString + " in this battle!";
 
         }
 
@@ -261,6 +305,13 @@ public class HuntTurnView : TurnView
         {
             g.gameObject.SetActive(false);
         }
+
+        foreach (var character in relatedCharacters)
+        {
+            character.GetComponent<Collider2D>().isTrigger = true;
+        }
+
+        MusicManager.Instance.playNormal();
     }
 
 
@@ -285,14 +336,18 @@ public class HuntTurnView : TurnView
         var monstersInfo = CityManager.Instance.currentCityInfo().monsters;
         var maxMonstersInfo = CityManager.Instance.currentCityInfo().maxMonsterNumber;
         //int[] monsterGroups = new int[monstersInfo.Length];
-        for(int i = 0; i < monstersInfo.Length; i++)
+        for (int i = 0; i < monstersInfo.Length; i++)
         {
-            if (monstersInfo[i] > 0)
+            if(i>= monstersInfo.Length)
+            {
+                i = i;
+            }
+            if (i<monstersInfo.Length&& monstersInfo[i] > 0)
             {
                 int rand = Random.Range(1, Mathf.Min(maxMonstersInfo[i], monstersInfo[i]) + 1);
                 //monsterGroups[i] = rand;
                 monsterGroups[gi].gameObject.SetActive(true);
-                monsterGroups[gi].Init(i, rand,this);
+                monsterGroups[gi].Init(i, rand, this);
                 gi++;
             }
         }
@@ -337,7 +392,7 @@ public class HuntTurnView : TurnView
         for (int i = 0; i < relatedCharacters.Count; i++)
         {
             relatedCharacters[i].showStatus(CharacterStatus.health);
-                }
+        }
     }
 
     void addReward(Monster mon)
@@ -345,14 +400,14 @@ public class HuntTurnView : TurnView
         var reward = mon.info.reward;
         string inventoryString = Inventory.Instance.inventoryItemsToString(reward);
 
-        descriptionText.text = "Killed monster " + mon.name + " get "+ inventoryString;
+        descriptionText.text = "Killed monster " + mon.name + " get " + inventoryString;
         Inventory.Instance.addItems(reward);
         totalReward = Utils.arrayAggregasion(totalReward, reward);
     }
 
     void generateCharactersAround()
     {
-        foreach(var chara in relatedCharacters)
+        foreach (var chara in relatedCharacters)
         {
 
         }
@@ -369,12 +424,12 @@ public class HuntTurnView : TurnView
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

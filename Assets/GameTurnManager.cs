@@ -38,6 +38,8 @@ public class GameTurnManager : Singleton<GameTurnManager>
     }
     public void nextTurn()
     {
+
+        SFXManager.Instance.playNextTurn();
         var currentTurnView = turnViewKeyToItem[currentTurn];
         currentTurnView.stopTurnView();
         while (true)

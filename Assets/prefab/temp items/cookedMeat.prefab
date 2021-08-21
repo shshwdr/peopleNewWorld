@@ -31,6 +31,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: cookedMeat
       objectReference: {fileID: 0}
+    - target: {fileID: 7824192019909680482, guid: f2a96fe020fa5354c8e6d1d8e4d03785, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824192019909680482, guid: f2a96fe020fa5354c8e6d1d8e4d03785, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7824192019909680482, guid: f2a96fe020fa5354c8e6d1d8e4d03785, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7824192019909680483, guid: f2a96fe020fa5354c8e6d1d8e4d03785, type: 3}
       propertyPath: m_RootOrder
       value: 0

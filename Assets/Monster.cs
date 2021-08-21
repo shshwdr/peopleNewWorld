@@ -36,6 +36,13 @@ public class Monster : HPObject
     public override void die()
     {
         base.die();
+
+        StartCoroutine(delayDie());
+    }
+
+    IEnumerator delayDie()
+    {
+        yield return new WaitForSeconds(1f);
         gameObject.SetActive(false);
     }
     // Update is called once per frame

@@ -3,8 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class AbilityRow : MonoBehaviour
+public class AbilityRow : MonoBehaviour, IPointerEnterHandler
+     , IPointerExitHandler
 {
     public CharacterAbility item;
     public TMP_Text staticLabel;
@@ -23,8 +25,25 @@ public class AbilityRow : MonoBehaviour
         //EventPool.OptIn("updateCityResource", updateCityResource);
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        HUDManager.Instance.showExplain(3, (int)item);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        HUDManager.Instance.hideExplain();
+    }
     public void updateCityResource()
     {
+        if (character == null)
+        {
+            character = GetComponentInParent<Character>();
+        }
+        if (item == null)
+        {
+            item = item;
+        }
         int value = character.getAbility(item);
         valueLabel.text = value.ToString();
         //if (value != 0 /*&& !gameObject.active*/)

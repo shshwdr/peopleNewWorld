@@ -40,6 +40,11 @@ public class MonsterGroup : MonoBehaviour
         {
             return;
         }
+        isSelected = true;
+        if (!view)
+        {
+            return;
+        }
         view.selectMonsterGroup(this);
     }
 

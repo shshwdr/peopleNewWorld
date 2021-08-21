@@ -21,7 +21,7 @@ public class MoveTurnView : TurnView
 
     public void hideMap()
     {
-        MapController.Instance.openMap();
+        MapController.Instance.closeMap();
     }
 
     // Start is called before the first frame update

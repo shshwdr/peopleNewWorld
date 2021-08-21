@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: 0
+  image: {fileID: 4963292176418763349}
   staticLabel: {fileID: 3242964576045690511}
   valueLabel: {fileID: 3242964577387877937}
 --- !u!1001 &5037390037545369395
@@ -22,6 +23,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3531180635760853482, guid: 33fb86e9a3d681e4b80199b0d75925f8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531180635760853482, guid: 33fb86e9a3d681e4b80199b0d75925f8, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531180635760853482, guid: 33fb86e9a3d681e4b80199b0d75925f8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3531180635760853482, guid: 33fb86e9a3d681e4b80199b0d75925f8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7559631264619866370, guid: 33fb86e9a3d681e4b80199b0d75925f8, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4278190080
@@ -158,6 +175,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7559631265485989544, guid: 33fb86e9a3d681e4b80199b0d75925f8, type: 3}
   m_PrefabInstance: {fileID: 5037390037545369395}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4963292176418763349 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 74661773723159910, guid: 33fb86e9a3d681e4b80199b0d75925f8, type: 3}
+  m_PrefabInstance: {fileID: 5037390037545369395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3242964576045690511 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7559631265425215932, guid: 33fb86e9a3d681e4b80199b0d75925f8, type: 3}

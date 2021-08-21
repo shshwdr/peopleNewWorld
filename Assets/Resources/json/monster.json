@@ -4,17 +4,43 @@
       {
         "name": "bat",
         "attack":10,
-        "maxHP":5,
-        "basicHitRate":0.5,
+        "maxHP":3,
+        "basicHitRate":0.3,
+        "basicAvoidRate":1,
+        "reward": [0,3,2,0],
+        "id":0
+      },{
+        "name": "dog",
+        "attack":20,
+        "maxHP":7,
+        "basicHitRate":0.3,
         "basicAvoidRate":0.8,
-        "reward": [3,1,1,0]
+        "reward": [1,4,2,0],
+        "id":0
+      },{
+        "name": "mushroom",
+        "attack":25,
+        "maxHP":12,
+        "basicHitRate":0.6,
+        "basicAvoidRate":0.8,
+        "reward": [6,0,0,0],
+        "id":0
+      },{
+        "name": "crow",
+        "attack":25,
+        "maxHP":15,
+        "basicHitRate":0.6,
+        "basicAvoidRate":0.8,
+        "reward": [1,8,4,0],
+        "id":0
       },{
         "name": "dragon",
-        "attack":20,
-        "maxHP":5,
-        "basicHitRate":1,
-        "basicAvoidRate":0.8,
-        "reward": [5,1,0,1]
+        "attack":30,
+        "maxHP":20,
+        "basicHitRate":0.7,
+        "basicAvoidRate":0.6,
+        "reward": [8,8,0,1],
+        "id":0
       }
     ]
   }

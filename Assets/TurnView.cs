@@ -24,7 +24,6 @@ public class TurnView:MonoBehaviour
         StartCoroutine(moveCharacters());
     }
 
-
     public virtual void stopTurnView()
     {
         hideRelatedCharacters();
@@ -33,6 +32,7 @@ public class TurnView:MonoBehaviour
             var character = CharacterManager.Instance.characterList[i];
             character.cleanTempItems();
         }
+        ControlManager.Instance.cleanPopups();
         uiPanel.SetActive(false);
         view.SetActive(false);
     }
@@ -78,9 +78,24 @@ public class TurnView:MonoBehaviour
         }
     }
 
+    public virtual void setCharactersFinalPosition()
+    {
+        //if (relatedCharacters == null)
+        {
+            relatedCharacters = CharacterManager.Instance.getCharacters();
+        }
+        for (int i = 0; i < relatedCharacters.Count; i++)
+        {
+            var character = relatedCharacters[i];
+            character.transform.position = characterPositionParent.GetChild(i).position;
+            character.gameObject.SetActive(true);
+        }
+    }
+
 
     protected IEnumerator moveCharacters()
     {
+        SFXManager.Instance.playSFXRandom(SFXManager.Instance.characterAppear);
         for (int i = 0; i < relatedCharacters.Count; i++)
         {
             var character = relatedCharacters[i];

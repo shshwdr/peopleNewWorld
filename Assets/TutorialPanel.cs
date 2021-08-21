@@ -35,6 +35,8 @@ public class TutorialPanel : Singleton<TutorialPanel>
                 y();
             Hide();
            TutorialManager.Instance.finishPopup(t);
+
+            SFXManager.Instance.playSFXRandom(SFXManager.Instance.clickNext);
         });
        // HUD.Instance.togglePause();
         isShowing = true;

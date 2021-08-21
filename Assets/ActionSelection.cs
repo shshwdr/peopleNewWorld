@@ -55,6 +55,8 @@ public class ActionSelection : MonoBehaviour
         {
             return;
         }
+
+        SFXManager.Instance.playSFXRandom(SFXManager.Instance.clickChar);
         EventPool.Trigger<int>("mouseDownCharacter", character.id);
         //Debug.Log("on mouse down " + character.name);
         actionButtonParent.gameObject.SetActive(true);
@@ -109,13 +111,15 @@ public class ActionSelection : MonoBehaviour
     public void showAllSelectionUI()
     {
         allSelectionUI.SetActive(true);
+        actionButtonParent.gameObject.SetActive(false);
     }
 
     public void cancelSelection()
     {
 
         ControlManager.Instance.shouldBlockInput = false;
-        hideAllSelectionUI();
+        //hideAllSelectionUI();
+        hideSelection();
     }
    
 

@@ -14,7 +14,9 @@ public class ActionButton : MonoBehaviour
         selection = s;
         id = i;
         GetComponentInChildren<TMP_Text>().text = selection.actionNameMap[(CharacterAction)i];
-        GetComponent<Button>().onClick.AddListener(delegate { selection.selectAction(id); });
+        GetComponent<Button>().onClick.AddListener(delegate { selection.selectAction(id);
+            SFXManager.Instance.playSFXRandom(SFXManager.Instance.clickAction);
+        });
     }
     // Start is called before the first frame update
     void Start()

@@ -428,6 +428,13 @@ namespace PixelCrushers.DialogueSystem
         /// <param name="subtitle">Subtitle associated with panel to hide.</param>
         public void HideSubtitle(Subtitle subtitle)
         {
+            //
+
+
+            if (subtitle.speakerInfo != null && subtitle.speakerInfo.transform && subtitle.speakerInfo.transform.GetComponent<DialogueCharacterHelper>())
+            {
+                subtitle.speakerInfo.transform.GetComponent<DialogueCharacterHelper>().stopDialogue();
+            }
             if (subtitle == null) return;
             DialogueActor dialogueActor;
             var panel = GetPanel(subtitle, out dialogueActor);

@@ -1,3 +1,4 @@
+using PixelCrushers.DialogueSystem;
 using Pool;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,12 +16,43 @@ public class Character : HPObject
     public Transform popupPositions;
     int popupPositionId;
     int tempItemsId = 0;
+    public Collider2D collider;
+
+
+
+    //public bool isDizzy;
+    //int dizzyRound = 2;
+    //int currentDizzyRound = 0;
+    public void getIntoStory()
+    {
+        actionSelection.hideAllSelectionUI();
+        hideStatus();
+        collider.enabled = false;
+        actionSelection.enabled = false;
+    }
+
+    public void leaveStory()
+    {
+
+        actionSelection.showAllSelectionUI();
+        showStatus();
+        collider.enabled = true;
+        actionSelection.enabled = true;
+    }
+
     public static Dictionary<CharacterAbility, string> abilityNameMap = new Dictionary<CharacterAbility, string>()
 {
-    {CharacterAbility.Int,"INT" },
+    {CharacterAbility.Int,"DUR" },
     {CharacterAbility.Dex,"DEX" },
     {CharacterAbility.Agi,"AGI" },
     {CharacterAbility.Str,"STR" },
+};
+
+    public static Dictionary<CharacterStatus, string> statusNameMap = new Dictionary<CharacterStatus, string>()
+{
+    {CharacterStatus.sanity,"Sanity" },
+    {CharacterStatus.health,"Health" },
+    {CharacterStatus.hungry,"Fullness" },
 };
 
     public HPBar[] statusBar;
@@ -49,7 +81,7 @@ public class Character : HPObject
             //str buff
             res += Mathf.FloorToInt((getAbility(CharacterAbility.Str)) * 0.1f);
             //weapon
-            if (Inventory.Instance.getItemAmount(InventoryItem.weapon) > 1)
+            if (Inventory.Instance.getItemAmount(InventoryItem.weapon) >= 1)
             {
                 res += 5;
                 Inventory.Instance.consumeItem(InventoryItem.weapon, 1);
@@ -108,9 +140,18 @@ public class Character : HPObject
     {
         abilityValue[(int)ability] += val;
         abilityValue[(int)ability] = Mathf.Min(abilityValue[(int)ability], 100);
-        ControlManager.Instance.createPopupUI(abilityNameMap[ability] + " + " + val.ToString(), popupPositions.GetChild(popupPositionId).position);
+        if (gameObject.active)
+        {
+            showPopup(abilityNameMap[ability] + " + " + val.ToString(), Color.yellow);
+        }
+    }
+
+    public void showPopup(string text,Color color)
+    {
+
+        ControlManager.Instance.createPopupUI(text, popupPositions.GetChild(popupPositionId).position,color);
         popupPositionId++;
-        if(popupPositionId>= popupPositions.childCount)
+        if (popupPositionId >= popupPositions.childCount)
         {
             popupPositionId = 0;
         }
@@ -124,26 +165,50 @@ public class Character : HPObject
     public void increaseStatus(CharacterStatus ability, int val)
     {
         statusValue[(int)ability] += val;
-        statusValue[(int)ability] = Mathf.Min(abilityValue[(int)ability], 100);
+        statusValue[(int)ability] = Mathf.Min(statusValue[(int)ability], 100);
         statusBar[(int)ability].updateCurrentValue(statusValue[(int)ability]);
+        if (gameObject.active)
+        {
+
+            showPopup(statusNameMap[ability] + " + " + val.ToString(), Color.green);
+        }
     }
 
-    
+    public void clearPopups()
+    {
+
+    }
 
     public void decreaseStatus(CharacterStatus ability, int val)
     {
+
+        val = Mathf.CeilToInt( (float)val * (0.5f + ((100 - getAbility(CharacterAbility.Int)) * 0.5f / 100f)));
+
         statusValue[(int)ability] -= val;
         statusValue[(int)ability] = Mathf.Max(statusValue[(int)ability], 0);
         statusBar[(int)ability].updateCurrentValue(statusValue[(int)ability]);
-        if (statusValue[(int)ability] <= 0)
+        if (gameObject.active)
         {
-            die();
+            showPopup(statusNameMap[ability] + " - " + val.ToString(), Color.red);
         }
+
+        if(ability == CharacterStatus.hungry && statusValue[(int)ability] <= 0)
+        {
+            TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialAlert_HungryAlert);
+            statusValue[(int)CharacterStatus.health] -= val;
+            statusBar[(int)CharacterStatus.health].updateCurrentValue(statusValue[(int)ability]);
+        }
+
+        //if (statusValue[(int)ability] <= 0)
+        //{
+        //    die();
+        //}
     }
 
 
     public override void doDamage(int damage)
     {
+        animator.SetTrigger("hit");
         decreaseStatus(CharacterStatus.health, damage);
     }
 
@@ -192,6 +257,19 @@ public class Character : HPObject
         {
             return ScoutTurnView.Instance.canCharacterScout(this);
         }
+
+        if (tosetAction != CharacterAction.rest && getStatus(CharacterStatus.sanity) < MainGameManager.Instance.forceRestSanity)
+        {
+
+            DialogueManager.ShowAlert("Sanity to low to do anything.");
+            return false;
+        }
+        if (tosetAction != CharacterAction.rest && getStatus(CharacterStatus.health) < MainGameManager.Instance.forceRestHealth)
+        {
+            TutorialManager.Instance.showTutorialPanel(TutorialManager.tutorialAlert_HealthAlert);
+            DialogueManager.ShowAlert("Health to low to do anything.");
+            return false;
+        }
         return true;
     }
     public void setAction(int i)
@@ -209,6 +287,7 @@ public class Character : HPObject
         actionSelection = GetComponent<ActionSelection>();
         dragComponent.enabled = false;
         abilitiesUI = GetComponentsInChildren<AbilityRow>();
+        collider = GetComponent<Collider2D>();
     }
     // Start is called before the first frame update
     void Start()

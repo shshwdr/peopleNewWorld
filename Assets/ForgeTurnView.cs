@@ -44,7 +44,7 @@ public class ForgeTurnView : TurnView
 
         foreach (var chara in relatedCharacters)
         {
-            chara.increaseAbility(affectAbility, 1);
+            chara.increaseAbility(affectAbility, Random.Range(2, 5));
         }
         // CityManager.Instance.collectItemsFromCurrentCity(collects);
     }

@@ -5,6 +5,12 @@ using LitJson;
 using Pool;
 using UnityEngine.UI;
 
+public class CityIncrease
+{
+
+    public float[] collectable;
+    public float[] monsters;
+}
 public class CityInfo
 {
     public int id;
@@ -14,6 +20,9 @@ public class CityInfo
     public int[] collectable;
     public int[] monsters;
     public int[] maxMonsterNumber;
+    public bool isDestination;
+
+
     public Vector2 position { get { return new Vector2(px, py); } }
     //List<>
 }
@@ -25,7 +34,12 @@ public class AllCityInfo
 public class CityManager : Singleton<CityManager>
 {
     List<CityInfo> allCity;
-    Dictionary<Vector2, CityInfo> keyToCity = new Dictionary<Vector2, CityInfo>();
+    List<CityInfo> allCityOrigin;
+    List<CityIncrease> allCityIncrease;
+
+    float resouceRegenerateRate = 1f / 20f;
+
+    public Dictionary<Vector2, CityInfo> keyToCity = new Dictionary<Vector2, CityInfo>();
     int currentCityId = 0;
 
     public Transform mapTilesParent;
@@ -38,6 +52,8 @@ public class CityManager : Singleton<CityManager>
     public Sprite tentIcon;
     public Sprite[] tileIcons;
 
+    public List<MonsterRow> monsterRow = new List<MonsterRow>();
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -45,14 +61,60 @@ public class CityManager : Singleton<CityManager>
         //data = JsonMapper.ToObject(text);
         var allCities = JsonMapper.ToObject<AllCityInfo>(text);
         allCity = allCities.allCity;
+
+        var allCities2= JsonMapper.ToObject<AllCityInfo>(text);
+        allCityOrigin = allCities2.allCity;
+        allCityIncrease = new List<CityIncrease>();
         int i = 0;
         foreach(var cityInfo in allCity)
         {
             cityInfo.id = i;
             keyToCity[new Vector2(cityInfo.px, cityInfo.py)] = cityInfo;
             i++;
+            var increase = new CityIncrease();
+            increase.collectable = new float[cityInfo.collectable.Length];
+            increase.monsters = new float[cityInfo.monsters.Length];
+            allCityIncrease.Add(increase);
         }
 
+    }
+
+    public void regenerateAllResources()
+    {
+        for(int i = 0; i < allCityIncrease.Count; i++)
+        {
+
+            for (int j= 0; j < allCityOrigin[i].collectable.Length;j++)
+            {
+                allCityIncrease[i].collectable[j] += allCityOrigin[i].collectable[j] * resouceRegenerateRate;
+                if (allCityIncrease[i].collectable[j] >= 1)
+                {
+                    int addValue = Mathf.FloorToInt(allCityIncrease[i].collectable[j]);
+                    allCity[i].collectable[j] += addValue;
+                    allCity[i].collectable[j] = Mathf.Min(allCity[i].collectable[j], allCityOrigin[i].collectable[j]);
+                    allCityIncrease[i].collectable[j] -= addValue;
+                }
+            }
+        }
+
+        for (int i = 0; i < allCityIncrease.Count; i++)
+        {
+
+            for (int j = 0; j < allCityOrigin[i].monsters.Length; j++)
+            {
+                allCityIncrease[i].monsters[j] += allCityOrigin[i].monsters[j] * resouceRegenerateRate;
+                if (allCityIncrease[i].monsters[j] >= 1)
+                {
+                    int addValue = Mathf.FloorToInt(allCityIncrease[i].monsters[j]);
+                    allCity[i].monsters[j] += addValue;
+                    allCity[i].monsters[j] = Mathf.Min(allCity[i].monsters[j], allCityOrigin[i].monsters[j]);
+                    allCityIncrease[i].monsters[j] -= addValue;
+                }
+            }
+        }
+
+        EventPool.Trigger("updateCityResource");
+        EventPool.Trigger("updateCityMonster");
     }
 
     public CityInfo currentCityInfo()
@@ -61,12 +123,25 @@ public class CityManager : Singleton<CityManager>
     }
     public void moveToCity(GameObject go)
     {
+
         var pos = mapTileToKey[go];
         moveToCity(pos);
     }
     public void moveToCity(Vector2 pos)
     {
+        foreach(var row in monsterRow)
+        {
+            row.gameObject.SetActive(true);
+        }
+
         currentCityId = keyToCity[pos].id;
+        if (keyToCity[pos].isDestination)
+        {
+
+            CSDialogueManager.Instance.addDialogue(5);
+        }
+        EventPool.Trigger("updateCityResource");
+        EventPool.Trigger("updateCityMonster");
     }
 
     public bool isCurrentTile(GameObject go)
@@ -106,10 +181,19 @@ public class CityManager : Singleton<CityManager>
                 }
                 else
                 {
-                    mapTile.SetActive(false);
+                    mapTile.GetComponent<MapTile>().Hide();
                 }
                 z++;
             }
+        }
+    }
+
+    public void unlockWholeMap()
+    {
+        foreach(Transform child in mapTilesParent)
+        {
+            //child.gameObject.SetActive(true);
+            child.GetComponent<MapTile>().Show();
         }
     }
 
@@ -142,9 +226,10 @@ public class CityManager : Singleton<CityManager>
     {
         isMapTileUnlocked[key] = true;
 
-        keyToMapTile[key].SetActive(true);
+        //keyToMapTile[key].SetActive(true);
 
-        
+        keyToMapTile[key].GetComponent<MapTile>().Show();
+
 
         return getTileMapByKey(key);
     }
@@ -152,6 +237,13 @@ public class CityManager : Singleton<CityManager>
     public Vector3 worldPositionOfKey(Vector2 keyPosition)
     {
         return keyToMapTile[keyPosition].transform.position;
+    }
+
+    public void killedMonster(int index)
+    {
+        allCity[currentCityId].monsters[index] -= 1;
+
+        EventPool.Trigger("updateCityMonster");
     }
 
     // Update is called once per frame
